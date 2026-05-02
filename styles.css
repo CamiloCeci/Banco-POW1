@@ -2,8 +2,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    --bg-body: #cdcdcd;    /* Tu color actual [cite: 1] */
+    --bg-card: #ffffff;    /* Tu color actual  */
+    --text-principal: #333333; /* Tu color actual  */
+    --text-secundario: #666666; /* Tu color actual  */
+    --border-color: #30ae5c;   /* Tu color actual [cite: 3] */
+    --input-bg: #f9f9f9;
+}
+
+/* Colores para el Modo Oscuro */
+body.dark-mode {
+    --bg-body: #2c2a2c;    /* Un morado mucho más oscuro */
+    --bg-card: #2d2d2d;    /* Gris oscuro para la tarjeta */
+    --text-principal: #f0f0f0; 
+    --text-secundario: #bbbbbb;
+    --border-color: #30ae5c;
+    --input-bg: #3d3d3d;
+}
+
 body{
-    background-color: #f7f7f7;
+    background-color: var(--bg-body);
+    transition: background-color 0.4s ease;
     font-family: sans-serif;
     padding: 50px;
 
@@ -19,7 +39,8 @@ body{
 
 
 .Tarjeta{
-    background-color: #fff;
+    background-color: var(--bg-card);
+    color: var(--text-principal);
     width: 300px;
     margin: auto;
     padding: 25px;
@@ -28,22 +49,21 @@ body{
     transition: 0.3s;
     flex: 1; 
     padding: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un tipo de letra más moderno */
-    color: #333; /* Color general del texto */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un tipo de letra más moderno */ 
     order: 1;
     
 }
 .Tarjeta:hover{
-    border-color: #30ae5c;
-    box-shadow: 0px 0px 10px #ae3030;
+    border-color: var(--border-color);
+    box-shadow: 0px 0px 10px #8630ae;
 }
 
 h2{
     margin-bottom: 100px;
-    color: #333
+    color: var(--text-principal)
 }
 p{
-    color: #666;
+    color: var(--text-secundario);
     margin-bottom: 20px;
     font-size: 14px;
 }
@@ -64,7 +84,7 @@ p{
 
 .boton:hover{
     color: white;
-    background-color: #08b63f;
+    background-color: var(--border-color);
 }
 
 /* Este es el contenedor que mencionabas para poner cuadros lado a lado */
@@ -73,7 +93,7 @@ p{
     width: 100%;                    /* Para que no toque los bordes en pantallas pequeñas */
     max-width: 1100px;
     margin: auto;
-    background-color: white;
+    background-color: var(--bg-card);
     border-radius: 15px;
     overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
     box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
@@ -112,7 +132,7 @@ p{
     align-items: center;
     text-align: center;
     margin: 20px 0;
-    color: #666;
+    color: var(--text-secundario);
 }
 
 .divisor::before, .divisor::after {
@@ -132,7 +152,7 @@ p{
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #30ae64; /* Usando el azul que mencionamos antes */
+    color: #30ae64; 
 }
 
 
@@ -140,7 +160,7 @@ p{
 .Tarjeta p {
     font-size: 16px;
     line-height: 1.5; /* Da aire al texto para que no se vea apretado */
-    color: #666;
+    color: var(--text-secundario);
 }
 
 /* Editar las etiquetas de los inputs (h3 y h4 que usaste como títulos) */
@@ -155,6 +175,7 @@ p{
 /* Editar el texto dentro de los botones */
 
 .etiqueta-formulario {
+
     margin-top: 5px;
     font-size: 20px;    /* Ajusta el número a tu gusto */
     font-weight: bold;  /* Opcional: para que resalte más */
@@ -172,8 +193,8 @@ p{
 .boton2 {
     width: 100%;
     padding: 12px;
-    background-color: #ffffff; /* Fondo blanco */
-    color: #444;               /* Texto gris oscuro */
+    background-color: var(--bg-card); /* Fondo blanco */
+    color: var(--text-secundario);               /* Texto gris oscuro */
     border: 1px solid #ddd;    /* Borde fino y suave [cite: 3] */
     border-radius: 8px;        /* Bordes redondeados modernos [cite: 3] */
     font-size: 14px;
@@ -201,7 +222,7 @@ input[type="password"] {
     font-size: 16px;         /* Letra fácil de leer */
     border: 1px solid #ddd;  /* Borde sutil */
     border-radius: 10px;     /* Bordes redondeados modernos */
-    background-color: #f9f9f9; /* Un fondo gris casi imperceptible */
+    background-color:var(--input-bg); /* Un fondo gris casi imperceptible */
     transition: all 0.3s ease; /* Para que el cambio al hacer clic sea suave */
     box-sizing: border-box;  /* Asegura que el padding no rompa el ancho total  */
     outline: none;           /* Quitamos el borde azul por defecto del navegador */
@@ -211,7 +232,7 @@ input[type="password"] {
 input[type="password"]:focus,
 input[type="email"]:focus {
     background-color: #fff;  /* El fondo se vuelve blanco puro */
-    border-color: #af26dd;   /* El borde cambia al color de tu marca  */
+    border-color: var(--border-color);   /* El borde cambia al color de tu marca  */
     box-shadow: 0px 0px 8px rgba(175, 38, 221, 0.2); /* Un resplandor suave */
 }
 
