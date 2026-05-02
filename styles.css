@@ -3,18 +3,18 @@
 }
 
 :root {
-    --bg-body: #cdcdcd;   
-    --bg-card: #ffffff;    
-    --text-principal: #333333;
-    --text-secundario: #666666; 
+    --bg-body: #cdcdcd;    /* Tu color actual [cite: 1] */
+    --bg-card: #ffffff;    /* Tu color actual  */
+    --text-principal: #333333; /* Tu color actual  */
+    --text-secundario: #666666; /* Tu color actual  */
     --border-color: #30ae5c;   
     --input-bg: #f9f9f9;
 }
 
 /* Colores para el Modo Oscuro */
 body.dark-mode {
-    --bg-body: #2c2a2c;    
-    --bg-card: #2d2d2d;    
+    --bg-body: #2c2a2c;    /* Un morado mucho más oscuro */
+    --bg-card: #2d2d2d;    /* Gris oscuro para la tarjeta */
     --text-principal: #f0f0f0; 
     --text-secundario: #bbbbbb;
     --border-color: #30ae5c;
