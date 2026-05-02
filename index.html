@@ -1,61 +1,65 @@
 <!DOCTYPE html>
-<html>  
-    <head>
-        <title>Prueba</title>
-        <link rel="stylesheet" href="styles.css">
-        
-    </head>
-    <body>
+<html>
+
+<head>
+    <title>Prueba</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
     <div class="main-container">
-    <div class="imagen-decorativa">
-        <video autoplay muted loop playsinline class="video-fondo">
-            <source src="video_tierra.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
-        </video>
-    </div>
-
-    
-
-    <div class="Tarjeta">
-
-
-        <h1>Crea tu perfil</h1>
-    
-
-        <form>
-            <label for="email" class="etiqueta-formulario">Tu Email</label>
-  
-            <input type="email" id="email" placeholder="EJ: tuemail@dominio.com" required>
-            <br>
-
-            <label for="password" class="etiqueta-formulario">Tu Contraseña</label>
-
-            <input type="password" id="password" placeholder="Mínimo 5 caracteres" required>
-            <br>
-            <br>
-            <button type="submit" class="boton">Seguir</button>
-        </form>
-
-        <div class="divisor">
-            <span>o continúa con</span>
+        <div class="imagen-decorativa">
+            <video autoplay muted loop playsinline class="video-fondo">
+                <source src="video_tierra.mp4" type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
         </div>
 
-        <div class="social-buttons">
-            <button class="boton2">Google</button>
-            <button class="boton2">Facebook</button>
-        </div>
 
-        <h4>¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></h4>
-    
-    </div>  
+
+        <div class="Tarjeta">
+
+
+            <h1>Crea tu perfil</h1>
+
+
+            <form id="miFormulario"> <label for="email" class="etiqueta-formulario">Tu Email</label>
+                <input type="email" id="email" placeholder="EJ: tuemail@dominio.com" required>
+                <br>
+                <label for="password" class="etiqueta-formulario">Tu Contraseña</label>
+                <input type="password" id="password" placeholder="Mínimo 5 caracteres" required>
+                <br><br>
+                <button type="submit" class="boton">Seguir</button>
+            </form>
+
+            <div class="divisor">
+                <span>o continúa con</span>
+            </div>
+
+            <div class="social-buttons">
+                <button class="boton2">Google</button>
+                <button class="boton2">Facebook</button>
+            </div>
+
+            <h4>¿Ya tienes una cuenta? <a href="#" class="button">Inicia Sesión</a></h4>
+
+        </div>
     </div>
 
-            <div class="theme-switch-wrapper">
+    <div class="theme-switch-wrapper">
         <button id="theme-toggle" class="boton-tema">
             <span id="theme-icon">🌙</span>
         </button>
     </div>
 
+
+    <div id="loader-container" class="loader-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Cargando tu experiencia...</p>
+        </div>
+    </div>
     <script>
         const btn = document.getElementById('theme-toggle');
         const icon = document.getElementById('theme-icon');
@@ -69,7 +73,7 @@
 
         btn.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            
+
             let theme = 'light';
             if (document.body.classList.contains('dark-mode')) {
                 theme = 'dark';
@@ -80,9 +84,22 @@
             // Guardamos la elección
             localStorage.setItem('theme', theme);
         });
+
+        const formulario = document.getElementById('miFormulario');
+        const loader = document.getElementById('loader-container');
+
+        formulario.addEventListener('submit', (event) => {
+            event.preventDefault(); // Detiene el envío real para mostrar la animación 
+
+            loader.classList.add('active'); // Muestra el cargador 
+
+            setTimeout(() => {
+                window.location.href = "bienvenida.html"; // Redirige tras 2 segundos [cite: 12]
+            }, 2000);
+        });
     </script>
-        
-    </body>
+
+</body>
 
 
 
