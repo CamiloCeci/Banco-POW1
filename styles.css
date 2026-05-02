@@ -105,24 +105,15 @@ p{
     order: 2;
     position: relative;
     overflow: hidden; /* Corta lo que sobre del video */
-    min-height: 400px; /* Asegura que el video tenga altura */
+    min-height: 0px; /* Asegura que el video tenga altura */
 }
 
-.imagen-decorativa iframe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%; /* Lo hacemos más grande para asegurar que cubra todo */
-    height: 100%;
-    transform: translate(-50%, -50%); /* Centra el video */
-    pointer-events: none; /* Evita que el usuario haga clic o pause el video */
-}
 
 .video-fondo {
     width: 100%;
     height: 100%;
     object-fit: cover; /* ¡Esta es la propiedad mágica! */
-    /* object-position: 70% 0%; */
+    object-position: 70% 0%;
 }
 
 
