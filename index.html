@@ -6,28 +6,45 @@
         
     </head>
     <body>
-        <h1 class = "titulo"> PERFILES</h1>>
-       
-        <div class = "Tarjeta">
-            <img>
-            <h2>Nombre 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button class = "boton">Seguir</button>
+    <div class="main-container">
+    <div class="imagen-decorativa">
+        <video autoplay muted loop playsinline class="video-fondo">
+            <source src="video_tierra.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+    </div>
+
+    <div class="Tarjeta">
+        <h1>Crea tu perfil</h1>
+    
+
+        <form>
+            <label for="email" class="etiqueta-formulario">Tu Email</label>
+  
+            <input type="email" id="email" placeholder="EJ: tuemail@dominio.com" required>
+            <br>
+
+            <label for="password" class="etiqueta-formulario">Tu Contraseña</label>
+
+            <input type="password" id="password" placeholder="Mínimo 5 caracteres" required>
+            <br>
+            <br>
+            <button type="submit" class="boton">Seguir</button>
+        </form>
+
+        <div class="divisor">
+            <span>o continúa con</span>
         </div>
-        <br>
-        <div class = "Tarjeta">
-            <img>
-            <h2>Nombre 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button class = "boton">Seguir</button>
+
+        <div class="social-buttons">
+            <button class="boton2">Google</button>
+            <button class="boton2">Facebook</button>
         </div>
-        <br>
-        <div class = "Tarjeta">
-            <img>
-            <h2>Nombre 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <button class = "boton">Seguir</button>
-        </div>
+
+        <h4>¿Ya tienes una cuenta? <a href="#">Inicia Sesión</a></h4>
+    </div>
+</div>
+    
         
     </body>
 

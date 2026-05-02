@@ -3,15 +3,20 @@
 }
 
 body{
-    background-color: #af26dd;
+    background-color: #f7f7f7;
     font-family: sans-serif;
     padding: 50px;
 
+    /* Activamos el centrado */
+    display: flex;                 
+    justify-content: center;       /* Centra horizontalmente */
+    align-items: center;           /* Centra verticalmente */
+    
+    /* La clave del centrado vertical */
+    min-height: 100vh;
+
 }
 
-.titulo{
-    margin-bottom: 40px;
-}
 
 .Tarjeta{
     background-color: #fff;
@@ -21,9 +26,15 @@ body{
     border: 2px solid #ddd;
     border-radius: 15px;
     transition: 0.3s;
+    flex: 1; 
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un tipo de letra más moderno */
+    color: #333; /* Color general del texto */
+    order: 1;
+    
 }
 .Tarjeta:hover{
-    border-color: #3056ae;
+    border-color: #30ae5c;
     box-shadow: 0px 0px 10px #ae3030;
 }
 
@@ -40,17 +51,167 @@ p{
 .boton{
     width: 100%;
     padding: 10px;
-    background-color: #24ecba40;
+    background-color: #24ec8b40;
     color: #666;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
-
-
 
 .boton:hover{
     color: white;
-    background-color: #24ecba;
+    background-color: #08b63f;
 }
+
+/* Este es el contenedor que mencionabas para poner cuadros lado a lado */
+.main-container {
+    display: flex;
+    width: 100%;                    /* Para que no toque los bordes en pantallas pequeñas */
+    max-width: 1100px;
+    margin: auto;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+}
+
+.imagen-decorativa {
+    flex: 1; /* Toma la mitad del espacio */
+    background-color: #6e91e4; /* Un color de respaldo */
+    order: 2;
+    position: relative;
+    overflow: hidden; /* Corta lo que sobre del video */
+    min-height: 400px; /* Asegura que el video tenga altura */
+}
+
+.imagen-decorativa iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%; /* Lo hacemos más grande para asegurar que cubra todo */
+    height: 100%;
+    transform: translate(-50%, -50%); /* Centra el video */
+    pointer-events: none; /* Evita que el usuario haga clic o pause el video */
+}
+
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ¡Esta es la propiedad mágica! */
+    /* object-position: 70% 0%; */
+}
+
+
+/* Estilo para la línea divisoria moderna */
+.divisor {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    color: #666;
+}
+
+.divisor::before, .divisor::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divisor span {
+    padding: 0 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+/* Editar el título principal (h2) */
+.Tarjeta h1 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #30ae64; /* Usando el azul que mencionamos antes */
+}
+
+
+/* Editar los párrafos (p) */
+.Tarjeta p {
+    font-size: 16px;
+    line-height: 1.5; /* Da aire al texto para que no se vea apretado */
+    color: #666;
+}
+
+/* Editar las etiquetas de los inputs (h3 y h4 que usaste como títulos) */
+.Tarjeta h3, .Tarjeta h4 {
+    font-size: 14px;
+    text-transform: uppercase; /* Pone el texto en mayúsculas */
+    letter-spacing: 1px; /* Separa un poco las letras */
+    margin-top: 20px;
+    
+}
+
+/* Editar el texto dentro de los botones */
+
+.etiqueta-formulario {
+    margin-top: 5px;
+    font-size: 20px;    /* Ajusta el número a tu gusto */
+    font-weight: bold;  /* Opcional: para que resalte más */
+    display: block;     /* Ayuda a que se comporte mejor con el margen */
+    margin-bottom: 5px; /* Espacio respecto al cuadro de texto */
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row; /* Los pone uno al lado del otro */
+    gap: 10px;               /* Espacio entre los botones */
+    margin-top: 15px;
+}
+
+.boton2 {
+    width: 100%;
+    padding: 12px;
+    background-color: #ffffff; /* Fondo blanco */
+    color: #444;               /* Texto gris oscuro */
+    border: 1px solid #ddd;    /* Borde fino y suave [cite: 3] */
+    border-radius: 8px;        /* Bordes redondeados modernos [cite: 3] */
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;           /* Cambia el cursor al pasar [cite: 5] */
+    transition: all 0.3s ease; /* Suaviza los cambios de color [cite: 3, 5] */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efecto al pasar el mouse (Hover) */
+.boton2:hover {
+    background-color: #f5f5f5; /* Gris muy clarito al tocarlo */
+    border-color: #bbb;        /* El borde se oscurece un poco */
+    transform: translateY(-2px); /* Pequeño salto hacia arriba */
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Aplicamos estilo a los inputs de texto, email y password */
+input[type="email"],
+input[type="password"] {
+    width: 100%;             /* Ocupa todo el ancho de la tarjeta */
+    padding: 15px 20px;      /* Mucho más espacio interno (Arriba/Abajo Izquierda/Derecha) */
+    font-size: 16px;         /* Letra fácil de leer */
+    border: 1px solid #ddd;  /* Borde sutil */
+    border-radius: 10px;     /* Bordes redondeados modernos */
+    background-color: #f9f9f9; /* Un fondo gris casi imperceptible */
+    transition: all 0.3s ease; /* Para que el cambio al hacer clic sea suave */
+    box-sizing: border-box;  /* Asegura que el padding no rompa el ancho total  */
+    outline: none;           /* Quitamos el borde azul por defecto del navegador */
+}
+
+/* Efecto cuando el usuario hace clic para escribir (Focus) */
+input[type="password"]:focus,
+input[type="email"]:focus {
+    background-color: #fff;  /* El fondo se vuelve blanco puro */
+    border-color: #af26dd;   /* El borde cambia al color de tu marca  */
+    box-shadow: 0px 0px 8px rgba(175, 38, 221, 0.2); /* Un resplandor suave */
+}
+
