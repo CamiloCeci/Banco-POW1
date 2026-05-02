@@ -1,0 +1,56 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #af26dd;
+    font-family: sans-serif;
+    padding: 50px;
+
+}
+
+.titulo{
+    margin-bottom: 40px;
+}
+
+.Tarjeta{
+    background-color: #fff;
+    width: 300px;
+    margin: auto;
+    padding: 25px;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+.Tarjeta:hover{
+    border-color: #3056ae;
+    box-shadow: 0px 0px 10px #ae3030;
+}
+
+h2{
+    margin-bottom: 100px;
+    color: #333
+}
+p{
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.boton{
+    width: 100%;
+    padding: 10px;
+    background-color: #24ecba40;
+    color: #666;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+.boton:hover{
+    color: white;
+    background-color: #24ecba;
+}
