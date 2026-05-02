@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Prueba</title>
+    <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -21,7 +21,7 @@
         <div class="Tarjeta">
 
 
-            <h1>Crea tu perfil</h1>
+            <h1>Iniciar Sesión</h1>
 
 
             <form id="miFormulario"> <label for="email" class="etiqueta-formulario">Tu Email</label>
@@ -43,7 +43,7 @@
                 <button class="boton2">Facebook</button>
             </div>
 
-            <h4>¿Ya tienes una cuenta? <a href="javascript:void(0)" class="button" id="link-iniciar-sesion">Iniciar Sesión</a></h4>
+           
 
         </div>
     </div>
@@ -102,17 +102,6 @@
         const linkIniciar = document.getElementById('link-iniciar-sesion');
         const loaderContainer = document.getElementById('loader-container'); // Asegúrate de que este ID coincida con tu div del spinner
 
-        linkIniciar.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita que el enlace salte de golpe
-
-            
-            loaderContainer.classList.add('active');
-
-            
-            setTimeout(() => {
-                window.location.href = "iniciar_sesion.html";
-            }, 2000);
-        });
     </script>
 
 </body>
