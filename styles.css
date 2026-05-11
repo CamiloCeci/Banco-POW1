@@ -1,44 +1,59 @@
-*{
+* {
     box-sizing: border-box;
 }
 
 :root {
-    --bg-body: #cdcdcd;    /* Tu color actual [cite: 1] */
-    --bg-card: #ffffff;    /* Tu color actual  */
-    --text-principal: #333333; /* Tu color actual  */
-    --text-secundario: #666666; /* Tu color actual  */
-    --border-color: #30ae5c;   
+    --bg-body: #cdcdcd;
+    /* Tu color actual [cite: 1] */
+    --bg-card: #ffffff;
+    /* Tu color actual  */
+    --text-principal: #333333;
+    /* Tu color actual  */
+    --text-secundario: #666666;
+    /* Tu color actual  */
+    --border-color: #30ae5c;
     --input-bg: #f9f9f9;
+    --color_saldo: #399e3e;
 }
 
 /* Colores para el Modo Oscuro */
 body.dark-mode {
-    --bg-body: #464346;    /* Un morado mucho más oscuro */
-    --bg-card: #2d2d2d;    /* Gris oscuro para la tarjeta */
-    --text-principal: #f0f0f0; 
+    --bg-body: #464346;
+    /* Un morado mucho más oscuro */
+    --bg-card: #2d2d2d;
+    /* Gris oscuro para la tarjeta */
+    --text-principal: #f0f0f0;
     --text-secundario: #bbbbbb;
     --border-color: #30ae5c;
     --input-bg: #3d3d3d;
+    --color_saldo: #197732fc;
 }
 
-body{
+body {
     background-color: var(--bg-body);
+    background-image: url('');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     transition: background-color 0.4s ease;
     font-family: sans-serif;
     padding: 50px;
 
     /* Activamos el centrado */
-    display: flex;                 
-    justify-content: center;       /* Centra horizontalmente */
-    align-items: center;           /* Centra verticalmente */
-    
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+
     /* La clave del centrado vertical */
     min-height: 100vh;
 
 }
 
 
-.Tarjeta{
+.Tarjeta {
     background-color: var(--bg-card);
     color: var(--text-principal);
     width: 300px;
@@ -47,28 +62,84 @@ body{
     border: 2px solid #ddd;
     border-radius: 15px;
     transition: 0.3s;
-    flex: 1; 
+    flex: 1;
     padding: 40px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Un tipo de letra más moderno */ 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Un tipo de letra más moderno */
     order: 1;
-    
+
 }
-.Tarjeta:hover{
+
+.Tarjeta:hover {
     border-color: var(--border-color);
     box-shadow: 0px 0px 10px #8630ae;
 }
 
-h2{
+.contenedor-saldo {
+    background-color: var(--color_saldo);
+    color: var(--text-principal);
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    transition: 0.3s;
+    flex: 1;
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Un tipo de letra más moderno */
+    order: 1;
+    position: relative;
+    /* Obligatorio para que la imagen se mueva dentro de aquí */
+    padding: 30px;
+    border-radius: 20px;
+    color: white;
+
+}
+
+.contenedor-saldo:hover {
+    border-color: var(--border-color);
+    box-shadow: 0px 0px 10px #8630ae;
+}
+
+h2 {
     margin-bottom: 100px;
     color: var(--text-principal)
 }
-p{
+
+p {
     color: var(--text-secundario);
     margin-bottom: 20px;
     font-size: 14px;
 }
 
-.boton{
+.saldo{
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--text-principal);
+}
+
+/* Nuevo: Esto pone el saldo y el ojo en la misma línea */
+.contenedor-dinero {
+    display: flex;
+    align-items: center;    /* Los centra verticalmente entre sí */
+    gap: 15px;              /* Espacio entre el texto y el ojo */
+    margin-top: 20px;
+}
+
+/* Ajuste para el icono del ojo */
+.icono-ojo {
+    width: 40px;            /* Tamaño adecuado */
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.icono-ojo:hover {
+    transform: scale(1.2);  /* Efecto al pasar el mouse */
+}
+
+.boton {
     width: 100%;
     padding: 10px;
     background-color: #24ec8b40;
@@ -82,7 +153,7 @@ p{
     text-transform: uppercase;
 }
 
-.boton:hover{
+.boton:hover {
     color: white;
     background-color: var(--border-color);
 }
@@ -90,29 +161,36 @@ p{
 /* Este es el contenedor que mencionabas para poner cuadros lado a lado */
 .main-container {
     display: flex;
-    width: 100%;                    /* Para que no toque los bordes en pantallas pequeñas */
+    width: 100%;
+    /* Para que no toque los bordes en pantallas pequeñas */
     max-width: 1100px;
     margin: auto;
     background-color: var(--bg-card);
     border-radius: 15px;
-    overflow: hidden; /* Para que la imagen respete las esquinas redondeadas */
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    /* Para que la imagen respete las esquinas redondeadas */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .imagen-decorativa {
-    flex: 1; /* Toma la mitad del espacio */
-    background-color: #6e91e4; /* Un color de respaldo */
+    flex: 1;
+    /* Toma la mitad del espacio */
+    background-color: #6e91e4;
+    /* Un color de respaldo */
     order: 2;
     position: relative;
-    overflow: hidden; /* Corta lo que sobre del video */
-    min-height: 0px; /* Asegura que el video tenga altura */
+    overflow: hidden;
+    /* Corta lo que sobre del video */
+    min-height: 0px;
+    /* Asegura que el video tenga altura */
 }
 
 
 .video-fondo {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ¡Esta es la propiedad mágica! */
+    object-fit: cover;
+    /* ¡Esta es la propiedad mágica! */
     object-position: 70% 0%;
 }
 
@@ -126,7 +204,8 @@ p{
     color: var(--text-secundario);
 }
 
-.divisor::before, .divisor::after {
+.divisor::before,
+.divisor::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid #ddd;
@@ -143,24 +222,28 @@ p{
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #30ae64; 
+    color: #30ae64;
 }
 
 
 /* Editar los párrafos (p) */
 .Tarjeta p {
     font-size: 16px;
-    line-height: 1.5; /* Da aire al texto para que no se vea apretado */
+    line-height: 1.5;
+    /* Da aire al texto para que no se vea apretado */
     color: var(--text-secundario);
 }
 
 /* Editar las etiquetas de los inputs (h3 y h4 que usaste como títulos) */
-.Tarjeta h3, .Tarjeta h4 {
+.Tarjeta h3,
+.Tarjeta h4 {
     font-size: 14px;
-    text-transform: uppercase; /* Pone el texto en mayúsculas */
-    letter-spacing: 1px; /* Separa un poco las letras */
+    text-transform: uppercase;
+    /* Pone el texto en mayúsculas */
+    letter-spacing: 1px;
+    /* Separa un poco las letras */
     margin-top: 20px;
-    
+
 }
 
 /* Editar el texto dentro de los botones */
@@ -168,30 +251,42 @@ p{
 .etiqueta-formulario {
 
     margin-top: 5px;
-    font-size: 20px;    /* Ajusta el número a tu gusto */
-    font-weight: bold;  /* Opcional: para que resalte más */
-    display: block;     /* Ayuda a que se comporte mejor con el margen */
-    margin-bottom: 5px; /* Espacio respecto al cuadro de texto */
+    font-size: 20px;
+    /* Ajusta el número a tu gusto */
+    font-weight: bold;
+    /* Opcional: para que resalte más */
+    display: block;
+    /* Ayuda a que se comporte mejor con el margen */
+    margin-bottom: 5px;
+    /* Espacio respecto al cuadro de texto */
 }
 
 .social-buttons {
     display: flex;
-    flex-direction: row; /* Los pone uno al lado del otro */
-    gap: 10px;               /* Espacio entre los botones */
+    flex-direction: row;
+    /* Los pone uno al lado del otro */
+    gap: 10px;
+    /* Espacio entre los botones */
     margin-top: 15px;
 }
 
 .boton2 {
     width: 100%;
     padding: 12px;
-    background-color: var(--bg-card); /* Fondo blanco */
-    color: var(--text-secundario);               /* Texto gris oscuro */
-    border: 1px solid #ddd;    /* Borde fino y suave [cite: 3] */
-    border-radius: 8px;        /* Bordes redondeados modernos [cite: 3] */
+    background-color: var(--bg-card);
+    /* Fondo blanco */
+    color: var(--text-secundario);
+    /* Texto gris oscuro */
+    border: 1px solid #ddd;
+    /* Borde fino y suave [cite: 3] */
+    border-radius: 8px;
+    /* Bordes redondeados modernos [cite: 3] */
     font-size: 14px;
     font-weight: 600;
-    cursor: pointer;           /* Cambia el cursor al pasar [cite: 5] */
-    transition: all 0.3s ease; /* Suaviza los cambios de color [cite: 3, 5] */
+    cursor: pointer;
+    /* Cambia el cursor al pasar [cite: 5] */
+    transition: all 0.3s ease;
+    /* Suaviza los cambios de color [cite: 3, 5] */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -199,45 +294,65 @@ p{
 
 /* Efecto al pasar el mouse (Hover) */
 .boton2:hover {
-    background-color: #f5f5f5; /* Gris muy clarito al tocarlo */
-    border-color: #bbb;        /* El borde se oscurece un poco */
-    transform: translateY(-2px); /* Pequeño salto hacia arriba */
-    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+    background-color: #f5f5f5;
+    /* Gris muy clarito al tocarlo */
+    border-color: #bbb;
+    /* El borde se oscurece un poco */
+    transform: translateY(-2px);
+    /* Pequeño salto hacia arriba */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
 }
 
 /* Aplicamos estilo a los inputs de texto, email y password */
 input[type="email"],
 input[type="password"] {
-    width: 100%;             /* Ocupa todo el ancho de la tarjeta */
-    padding: 15px 20px;      /* Mucho más espacio interno (Arriba/Abajo Izquierda/Derecha) */
-    font-size: 16px;         /* Letra fácil de leer */
-    border: 1px solid #ddd;  /* Borde sutil */
-    border-radius: 10px;     /* Bordes redondeados modernos */
-    background-color:var(--input-bg); /* Un fondo gris casi imperceptible */
-    transition: all 0.3s ease; /* Para que el cambio al hacer clic sea suave */
-    box-sizing: border-box;  /* Asegura que el padding no rompa el ancho total  */
-    outline: none;           /* Quitamos el borde azul por defecto del navegador */
+    width: 100%;
+    /* Ocupa todo el ancho de la tarjeta */
+    padding: 15px 20px;
+    /* Mucho más espacio interno (Arriba/Abajo Izquierda/Derecha) */
+    font-size: 16px;
+    /* Letra fácil de leer */
+    border: 1px solid #ddd;
+    /* Borde sutil */
+    border-radius: 10px;
+    /* Bordes redondeados modernos */
+    background-color: var(--input-bg);
+    /* Un fondo gris casi imperceptible */
+    transition: all 0.3s ease;
+    /* Para que el cambio al hacer clic sea suave */
+    box-sizing: border-box;
+    /* Asegura que el padding no rompa el ancho total  */
+    outline: none;
+    /* Quitamos el borde azul por defecto del navegador */
 }
 
 /* Efecto cuando el usuario hace clic para escribir (Focus) */
 input[type="password"]:focus,
 input[type="email"]:focus {
-    background-color: #fff;  /* El fondo se vuelve blanco puro */
-    border-color: var(--border-color);   /* El borde cambia al color de tu marca  */
-    box-shadow: 0px 0px 8px rgba(175, 38, 221, 0.2); /* Un resplandor suave */
+    background-color: #fff;
+    /* El fondo se vuelve blanco puro */
+    border-color: var(--border-color);
+    /* El borde cambia al color de tu marca  */
+    box-shadow: 0px 0px 8px rgba(175, 38, 221, 0.2);
+    /* Un resplandor suave */
 }
 
 /* La capa que cubre toda la pantalla */
 .loader-overlay {
-    display: none; /* Se activa con JS */
+    display: none;
+    /* Se activa con JS */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
-    backdrop-filter: blur(8px);    /* Desenfoque moderno */
-    z-index: 9999;                 /* Siempre por encima de todo */
+    background: rgba(0, 0, 0, 0.6);
+    /* Fondo oscuro semitransparente */
+    backdrop-filter: blur(8px);
+    /* Desenfoque moderno */
+    z-index: 9999;
+    /* Siempre por encima de todo */
     justify-content: center;
     align-items: center;
 }
@@ -254,7 +369,8 @@ input[type="email"]:focus {
     width: 60px;
     height: 60px;
     border: 6px solid rgba(255, 255, 255, 0.2);
-    border-top: 6px solid #af26dd; /* El color de tu marca */
+    border-top: 6px solid #af26dd;
+    /* El color de tu marca */
     border-radius: 50%;
     margin: 0 auto 20px;
     animation: spin 1s linear infinite;
@@ -262,12 +378,16 @@ input[type="email"]:focus {
 
 /* Animación de rotación */
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /* Clase que activaremos con JS */
 .loader-overlay.active {
     display: flex;
 }
-

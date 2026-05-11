@@ -64,59 +64,7 @@
             <p>Cargando tu experiencia...</p>
         </div>
     </div>
-    <script>
-        const btn = document.getElementById('theme-toggle');
-        const icon = document.getElementById('theme-icon');
-        const currentTheme = localStorage.getItem('theme');
-
-        // Si ya tenía preferencia guardada, se aplica
-        if (currentTheme === 'dark') {
-            document.body.classList.add('dark-mode');
-            icon.textContent = '☀️';
-        }
-
-        btn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-
-            let theme = 'light';
-            if (document.body.classList.contains('dark-mode')) {
-                theme = 'dark';
-                icon.textContent = '☀️';
-            } else {
-                icon.textContent = '🌙';
-            }
-            // Guardamos la elección
-            localStorage.setItem('theme', theme);
-        });
-
-        const formulario = document.getElementById('miFormulario');
-        const loader = document.getElementById('loader-container');
-
-        formulario.addEventListener('submit', (event) => {
-            event.preventDefault(); // Detiene el envío real para mostrar la animación 
-
-            loader.classList.add('active'); // Muestra el cargador 
-
-            setTimeout(() => {
-                window.location.href = "bienvenida.html"; // Redirige tras 2 segundos [cite: 12]
-            }, 2000);
-        });
-
-        const linkIniciar = document.getElementById('link-iniciar-sesion');
-        const loaderContainer = document.getElementById('loader-container'); // Asegúrate de que este ID coincida con tu div del spinner
-
-        linkIniciar.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita que el enlace salte de golpe
-
-            
-            loaderContainer.classList.add('active');
-
-            
-            setTimeout(() => {
-                window.location.href = "iniciar_sesion.html";
-            }, 2000);
-        });
-    </script>
+    <script src="login.js"></script>
 
 </body>
 
