@@ -180,10 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Aquí es donde llamas a tu función reutilizable pasándole los IDs del HTML
     if (typeof configurarDropdown === 'function') {
 
-        // Menú de opciones de la tuerca en la ventana de transacciones
+        // Menú desplegables
         configurarDropdown('btnTuerca', 'dropdownMenu');
         configurarDropdown('btnPerfil', 'menuPerfil');
-        
+        configurarDropdown('btnCuenta', 'menuCuenta');
 
         // 💡 Cuando crees nuevos menús en el futuro, solo agregas la llamada aquí abajo:
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');

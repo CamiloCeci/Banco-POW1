@@ -35,13 +35,18 @@
         <!-- Contenedor con el saldo y numero de cuenta -->
         <section class="tarjeta-banco">
             <div class="caja-saldo">
-                <div class="tarjeta-textosup">
+                <div class="tarjeta-textosup" style="position: relative;">
                     <span>Saldo actual-Cta.Ahorro *935</span>
-                    <button class="cambiar-cuenta">
+                    <button class="cambiar-cuenta" id="btnCuenta">
                         <div>
-                            <span class="flecha">▲</span>
+                            <span class="flecha">▼</span>
                         </div>
                     </button>
+                    <div class="cambiarcuenta-menu" id="menuCuenta">
+                        <span data-cuenta="corriente-456">Cta corriente-*456</span>
+                        <span data-cuenta="corriente-147">Cta corriente-*147</span>
+                        <span data-cuenta="ahorro-239">Cta ahorro-*239</span>
+                    </div>
                 </div>
                 <div class="tarjeta-textosaldo">
                     <span>Bs. 38.745,23</span>
