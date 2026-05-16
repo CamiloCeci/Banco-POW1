@@ -23,7 +23,7 @@ const loader = document.getElementById('loader-container');
 if (formRegistro) {
     formRegistro.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
 
@@ -35,7 +35,7 @@ if (formRegistro) {
         loader.classList.add('active'); // Activamos la animación de carga
         setTimeout(() => {
             alert("¡Usuario registrado con éxito!");
-            window.location.href = "iniciar_sesion.html"; 
+            window.location.href = "iniciar_sesion.html";
         }, 2000);
     });
 }
@@ -47,10 +47,10 @@ const formLogin = document.getElementById('miFormulario'); // Asegúrate que tu 
 if (formLogin) {
     formLogin.addEventListener('submit', (e) => {
         e.preventDefault();
-        
+
         const emailIngresado = document.getElementById('login-email').value;
         const passIngresada = document.getElementById('login-password').value;
-        
+
         // Usuarios predefinidos que pediste
         const credencialesFijas = [
             { email: 'juan', pass: '123456' },
@@ -73,4 +73,23 @@ if (formLogin) {
             alert("Usuario o contraseña incorrectos");
         }
     });
+
+    // --- 4. REDIRECCIÓN DESDE INDEX A INICIAR SESIÓN ---
+    const linkIniciar = document.getElementById('link-iniciar-sesion');
+
+    if (linkIniciar) {
+        linkIniciar.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que el enlace salte de golpe sin cargar la animación
+
+            // Comprobamos si el loader existe en la página actual antes de activarlo
+            if (loader) {
+                loader.classList.add('active'); // Muestra la rueda de carga
+            }
+
+            // Espera 2 segundos mostrando el spinner y luego cambia de ventana
+            setTimeout(() => {
+                window.location.href = "iniciar_sesion.html";
+            }, 2000);
+        });
+    }
 }
