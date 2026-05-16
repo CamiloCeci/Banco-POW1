@@ -11,40 +11,23 @@
             <!-- Logica del perfil del usuario -->
             <div class="perfil-interactuable">
                 <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
-                <button class="perfil-btn">
+                 <button class="perfil-btn" id="btnPerfil">
                     <div class="usuario-iniciales">
                         AP
                     </div>
                 </button>
-
-                <!-- Menu desplegable con sus opciones -->
-                <div class="perfil-interactuable-menu">
-                    <ul>
-                        <!-- Opcion editar perfil -->
-                        <li>
-                            <button>
-                                <a href="/editar_perfil.html">
-                                    <span>Editar perfil</span>
-                                </a>
-                            </button>
-                        </li>
-                        <!-- Opcion cerrar sesion -->
-                        <li>
-                            <button>
-                                <a href="iniciar_sesion.html">
-                                    <span>Cerrar sesión</span>
-                                </a>
-                            </button>
-                        </li>
-                        <hr> <!-- Linea divisora -->
-                        <li class="modoosc-switch">
-                            <span>Modo Oscuro</span>
-                            <label class="switch">
-                                <input type="checkbox" id="modoosc">
-                                <span class="slider"></span>
-                            </label>
-                        </li>
-                    </ul>
+                
+                <div class="perfil-interactuable-menu" id="menuPerfil">
+                    <a href="editar_perfil.html" class="menu-option">Editar perfil</a>
+                    <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                    <hr class="menu-divider"> 
+                    <div class="modoosc-switch">
+                        <span>Modo Oscuro</span>
+                        <label class="switch">
+                            <input type="checkbox" id="modoosc">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
         </header>
@@ -116,5 +99,9 @@
         <footer class="banca-footer">
             <p>&copy; 2026 Banca 360. Todos los derechos reservados.</p>
         </footer>
+
+        <script src="login.js"></script>
+
+
     </body>
 </html>
