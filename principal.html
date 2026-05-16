@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>Banca 360</title>
+        <title>Principal-Banca 360</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
-    <body>
-        <header>
+    <body class="banca-principal">
+        <header id="header-principal">
             <!-- Logo del banco -->
-            <img src="assets/Banca_360-removebg-preview.png">
-
+            <h1 class="logo">Banca 36🌎</h1>
             <!-- Logica del perfil del usuario -->
             <div class="perfil-interactuable">
                 <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
@@ -21,9 +21,21 @@
                 <div class="perfil-interactuable-menu">
                     <ul>
                         <!-- Opcion editar perfil -->
-                        <li><a href="/editar perfil">Editar perfil</a></li>
+                        <li>
+                            <button>
+                                <a href="/editar_perfil.html">
+                                    <span>Editar perfil</span>
+                                </a>
+                            </button>
+                        </li>
                         <!-- Opcion cerrar sesion -->
-                        <li><button class="cerrars-btn">Cerrar Sesión</button></li>
+                        <li>
+                            <button>
+                                <a href="iniciar_sesion.html">
+                                    <span>Cerrar sesión</span>
+                                </a>
+                            </button>
+                        </li>
                         <hr> <!-- Linea divisora -->
                         <li class="modoosc-switch">
                             <span>Modo Oscuro</span>
@@ -47,6 +59,7 @@
                             <div>
                                 <span class="flecha">▲</span>
                             </div>
+                        </button>
                     </div>
                     <div class="tarjeta-textosaldo">
                     <span>Bs. 38.745,23</span>
@@ -74,32 +87,32 @@
                     <p>Depósito desde Cta 0031859</p>
                 </div>
             </section>
-
-            <!-- Opciones de navegacion -->
-            <nav class="principal-navegacion">
-                <ul>
-                    <li>
-                        <button>
-                            <img src="assets/contract-svgrepo-com.svg">
-                            <span class="subtitulo-principal">Historial transacciones</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img src="assets/transfer-svgrepo-com.svg">
-                            <span class="subtitulo-principal">Transferencias</span>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img src="assets/mobile-phone-of-rounded-corners-svgrepo-com.svg">
-                            <span class="subtitulo-principal">Pago móvil</span>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
         </main>
         
+        <!-- Opciones de navegacion -->
+        <nav class="principal-navegacion">
+            <ul>
+                <li>
+                    <a href="transacciones.html" class="nav-link">
+                        <img src="assets/contract-svgrepo-com.svg" alt="Historial">
+                        <span class="subtitulo-principal">Historial transacciones</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="transferencias.html" class="nav-link">
+                        <img src="assets/transfer-svgrepo-com.svg" alt="Transferencias">
+                        <span class="subtitulo-principal">Transferencias</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="pagomovil.html" class="nav-link">
+                        <img src="assets/mobile-phone-of-rounded-corners-svgrepo-com.svg" alt="Pago Móvil">
+                        <span class="subtitulo-principal">Pago móvil</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
         <footer class="banca-footer">
             <p>&copy; 2026 Banca 360. Todos los derechos reservados.</p>
         </footer>

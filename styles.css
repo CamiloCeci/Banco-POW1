@@ -58,7 +58,230 @@ body {
     
 }
 
+/* Empieza Pagina principal */
 
+
+body.banca-principal {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #ffffff; /* Todo el fondo blanco unificado */
+    margin: 0;                 /* Elimina los bordes del navegador */
+    padding: 0 !important;     /* Anula por completo el padding de 50px heredado */
+}
+
+#header-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #117d1a; /* Verde institucional */
+    width: 100%;               
+}
+
+#header-principal .logo {
+    color: #ffffff;            
+    font-size: 36px;           
+    font-weight: bold;
+    margin: 0;                 
+    font-family: sans-serif;
+}
+
+.perfil-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.usuario-iniciales {
+    width: 50px;
+    height: 50px;
+    background-color: #4a77e5;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: 3px solid #ffffff; 
+}
+
+.perfil-interactuable-menu {
+    display: none; 
+}
+
+/* Maximizamos el contenedor principal para aprovechar mejor pantallas grandes */
+.principal-contenido {
+    flex: 1;
+    max-width: 1300px;         /* Incrementado de 900px a 1300px para expandir la interfaz */
+    width: 100%;
+    margin: 0 auto;            /* Centrado horizontal perfecto */
+    padding: 60px 40px;        /* Mayor respiro interno para que los componentes luzcan imponentes */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* Centra los elementos verticalmente en el espacio muerto */
+}
+
+/* Ajuste de la matriz Grid para usar el nuevo ancho expandido */
+.tarjeta-banco {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;                 /* Aumentamos la separación entre cajas a 40px */
+    align-items: center;
+    width: 100%;
+}
+
+.caja-saldo {
+    grid-column: span 2;
+    background-color: #117d1a;
+    color: white;
+    border-radius: 24px; 
+    padding: 45px 35px;        /* Hacemos la caja de saldo más robusta y espaciosa */
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-textosup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;           /* Texto un poco más legible */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.cambiar-cuenta {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cambiar-cuenta .flecha {
+    display: inline-block; 
+    transition: transform 0.2s ease; 
+}
+
+.cambiar-cuenta:hover .flecha {
+    transform: translateY(-3px); 
+}
+
+.tarjeta-textosaldo {
+    font-size: 65px;           /* Saldo más grande y llamativo */
+    font-weight: bold;
+    color: white; 
+}
+
+/* Botón del Ojo */
+.btn-ocultar-saldo {
+    grid-column: span 1;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-self: center;
+}
+
+.btn-ocultar-saldo img {
+    width: 130px;              /* Ajustamos el tamaño del ojo proporcionalmente al saldo */
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease-in-out; 
+}
+
+.btn-ocultar-saldo:hover img {
+    transform: scale(1.15); 
+}
+
+/* Transacciones Inferiores */
+.Ultimas-trans, .Ultimas-trans-barrasdivisoras {
+    text-align: center;
+    padding: 15px;
+}
+
+.Ultimas-trans p, .Ultimas-trans-barrasdivisoras p {
+    margin: 5px 0 0 0; 
+    color: #555555;
+    font-size: 16px;
+}
+
+.monto-principal {
+    display: block;
+    font-size: 32px;           /* Montos de transacciones acentuados */
+    font-weight: bold;
+    color: #000000;
+}
+
+.Ultimas-trans-barrasdivisoras {
+    border-left: 2px dashed #b5b5b5;
+    border-right: 2px dashed #b5b5b5;
+}
+
+/* Menú de Navegación inferior acoplado herméticamente */
+.principal-navegacion {
+    width: 100%;
+    margin-top: auto;          /* Empuja la barra al extremo inferior */
+    background-color: #117d1a; /* Garantiza fondo verde continuo de borde a borde */
+}
+
+.principal-navegacion ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    margin: 0;        
+    padding: 0;       
+}
+
+.principal-navegacion li {
+    flex: 1;
+}
+
+/* Estilización de la etiqueta <a> para que herede las propiedades de un botón limpio */
+.principal-navegacion .nav-link {
+    width: 100%;
+    background-color: #117d1a;
+    color: #ffffff;
+    padding: 25px 20px;          
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;     /* ¡Adiós al molesto subrayado azul del navegador! */
+    transition: background-color 0.2s, color 0.2s;
+    border-radius: 0;          
+    text-align: center;
+}
+
+/* Divisores internos sutiles entre los bloques del menú */
+.principal-navegacion li:not(:last-child) .nav-link {
+    border-right: 1px solid rgba(255, 255, 255, 0.15); 
+}
+
+/* Efecto hover sobre el enlace */
+.principal-navegacion .nav-link:hover {
+    background-color: #0e6615;
+    color: #ffffff;            /* Mantiene el texto blanco estable al pasar el mouse */
+}
+
+.principal-navegacion img {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+}
+
+.banca-footer {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: #666;
+    width: 100%;
+    margin-top: 0;             /* Cero separación con la barra verde superior */
+    border-top: none;          /* Eliminamos cualquier línea o borde residual */
+}
+/* Termina Pagina principal */
 .Tarjeta {
     background-color: var(--bg-card);
     color: var(--text-principal);
@@ -144,6 +367,7 @@ p {
 .icono-ojo:hover {
     transform: scale(1.2);  /* Efecto al pasar el mouse */
 }
+
 
 .boton {
     width: 100%;
