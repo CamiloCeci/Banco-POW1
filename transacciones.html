@@ -35,8 +35,9 @@
                     <button class="btn-tuerca" id="btnTuerca">⚙️</button>
 
                     <div class="dropdown-menu" id="dropdownMenu">
-                        <button onclick="alert('Filtrar por ingresos')">Ver Ingresos</button>
-                        <button onclick="alert('Filtrar por egresos')">Ver Egresos</button>
+                        <button onclick="filtrarHistorial('ingreso')">Ver Ingresos</button>
+                        <button onclick="filtrarHistorial('egreso')">Ver Egresos</button>
+                        <button onclick="filtrarHistorial('todos')">Ver Todos</button>
                         <button onclick="location.href='bienvenida.html'">Volver al Inicio</button>
                     </div>
                 </div>
@@ -44,42 +45,42 @@
 
             <div class="contenedor-scroll-transacciones">
 
-                <div class="transaccion">
+                <div class="transaccion egreso">
                     <span class="transaccion-tipo">Transferencia</span>
                     <span class="transaccion-fecha">30/04 10:00 am</span>
                     <span class="transaccion-monto">Bs. 2.500</span>
                     <span class="transaccion-detalle">Cta corriente 0012398 - Transferencia a Pablo</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion egreso">
                     <span class="transaccion-tipo">Pago móvil</span>
                     <span class="transaccion-fecha">29/04 8:24 pm</span>
                     <span class="transaccion-monto">Bs. 844</span>
                     <span class="transaccion-detalle">Banco Mercantil - 0416-2045498</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion ingreso">
                     <span class="transaccion-tipo">Depósito</span>
                     <span class="transaccion-fecha">29/04 7:49 am</span>
                     <span class="transaccion-monto">Bs. 7.800</span>
                     <span class="transaccion-detalle">Cta corriente 0031859</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion egreso">
                     <span class="transaccion-tipo">Pago móvil</span>
                     <span class="transaccion-fecha">26/04 5:12 pm</span>
                     <span class="transaccion-monto">Bs. 17.534</span>
                     <span class="transaccion-detalle">Cta ahorro 0297889 - Traslado a la cuenta de mi hijo</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion ingreso">
                     <span class="transaccion-tipo">Depósito</span>
                     <span class="transaccion-fecha">29/04 7:49 am</span>
                     <span class="transaccion-monto">Bs. 7.800</span>
                     <span class="transaccion-detalle">Cta corriente 0031859</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion egreso">
                     <span class="transaccion-tipo">Pago móvil</span>
                     <span class="transaccion-fecha">26/04 5:12 pm</span>
                     <span class="transaccion-monto">Bs. 17.534</span>
@@ -93,7 +94,7 @@
                     <span class="transaccion-detalle">Cta corriente 0012398 - Transferencia a Pablo</span>
                 </div>
 
-                <div class="transaccion">
+                <div class="transaccion egreso">
                     <span class="transaccion-tipo">Transferencia</span>
                     <span class="transaccion-fecha">30/04 10:00 am</span>
                     <span class="transaccion-monto">Bs. 2.500</span>
@@ -104,7 +105,7 @@
     </div>
     <script src="login.js"></script>
 
-    
+
 </body>
 
 </html>

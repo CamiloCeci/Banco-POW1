@@ -87,23 +87,31 @@ function iniciarLogin() {
     }
 }
 
-// --- Extra. REDIRECCIÓN DESDE INDEX A INICIAR SESIÓN ---
-const linkIniciar = document.getElementById('link-iniciar-sesion');
+// --- Extra. REDIRECCIÓN GENERICA ---
 
-if (linkIniciar) {
-    linkIniciar.addEventListener('click', (e) => {
-        e.preventDefault(); // Evita que el enlace salte de golpe sin cargar la animación
+function pasarPantallas(idBoton, urlDestino) {
+    const linkIniciar = document.getElementById(idBoton);
+    const loader = document.getElementById('loader-container');
+    if (linkIniciar) {
+        linkIniciar.addEventListener('click', (e) => {
+            e.preventDefault(); // Evita que el enlace salte de golpe sin cargar la animación
 
-        // Comprobamos si el loader existe en la página actual antes de activarlo
-        if (loader) {
-            loader.classList.add('active'); // Muestra la rueda de carga
+            // Si no tengo loader en el html pasa directo para que esten pendientes si no quieren loader
+            if (loader) {
+                loader.classList.add('active'); // Muestra la rueda de carga
+                setTimeout(() => {
+                    window.location.href = urlDestino;
+                }, 2000);
+            }
+            else {
+                window.location.href = urlDestino;
+            }
         }
+        );
 
         // Espera 2 segundos mostrando el spinner y luego cambia de ventana
-        setTimeout(() => {
-            window.location.href = "iniciar_sesion.html";
-        }, 2000);
-    });
+
+    }
 }
 // --- 4. FUNCIÓN REUTILIZABLE PARA MENÚS DESPLEGABLES ---
 function configurarDropdown(idBoton, idMenu) {
@@ -126,6 +134,24 @@ function configurarDropdown(idBoton, idMenu) {
         });
     }
 }
+//Esta creo que es de la seccion de extras
+function filtrarHistorial(tipo) {
+    // Buscamos todas las tarjetas de transacciones en la pantalla
+    const transacciones = document.querySelectorAll('.transaccion');
+
+    transacciones.forEach(tarjeta => {
+        if (tipo === 'todos') {
+            // Si eligen 'todos', mostramos absolutamente todas las tarjetas
+            tarjeta.style.display = 'grid'; 
+        } else if (tarjeta.classList.contains(tipo)) {
+            // Si la tarjeta tiene la clase que buscamos ('ingreso' o 'egreso'), se muestra
+            tarjeta.style.display = 'grid';
+        } else {
+            // Si no coincide, la escondemos por completo de la pantalla
+            tarjeta.style.display = 'none';
+        }
+    });
+}
 
 
 // ==========================================================================
@@ -133,7 +159,7 @@ function configurarDropdown(idBoton, idMenu) {
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Activamos la lógica universal del Modo Claro / Modo Oscuro
     // (Esta se ejecuta siempre en todas las páginas)
     if (typeof iniciarModoOscuro === 'function') {
@@ -154,12 +180,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Inicializamos los menús desplegables (Dropdowns) de tu aplicación
     // Aquí es donde llamas a tu función reutilizable pasándole los IDs del HTML
     if (typeof configurarDropdown === 'function') {
-        
+
         // Menú de opciones de la tuerca en la ventana de transacciones
         configurarDropdown('btnTuerca', 'dropdownMenu');
-        
+
         // 💡 Cuando crees nuevos menús en el futuro, solo agregas la llamada aquí abajo:
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');
+    }
+
+    //Extra relacionado a pasar pantallas
+    if (typeof pasarPantallas === 'function') {
+
+        // Se le pasa el id del boton que quieres que haga la magia y el sitio a donde debe ir
+        pasarPantallas('link-iniciar-sesion', 'iniciar_sesion.html');
     }
 
     console.log("¡Todas las funciones del Banco se han inicializado correctamente!");
