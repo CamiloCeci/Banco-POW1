@@ -104,29 +104,7 @@
     </div>
     <script src="login.js"></script>
 
-    <script>
-        // Nos aseguramos de que el HTML esté completamente cargado en el navegador
-        document.addEventListener('DOMContentLoaded', () => {
-            const btnTuerca = document.getElementById('btnTuerca');
-            const dropdownMenu = document.getElementById('dropdownMenu');
-
-            if (btnTuerca && dropdownMenu) {
-                // Evento al hacer clic en la tuerca
-                btnTuerca.addEventListener('click', (e) => {
-                    e.stopPropagation(); // Evita que el clic se propague al 'document' y se cierre al instante
-                    dropdownMenu.classList.toggle('show');
-                    console.log("Menú de la tuerca presionado desde el script interno.");
-                });
-
-                // Si se hace clic en cualquier otra parte de la pantalla, el menú se cierra solo
-                document.addEventListener('click', () => {
-                    dropdownMenu.classList.remove('show');
-                });
-            } else {
-                console.error("Error crítico: No se encontró el ID 'btnTuerca' o 'dropdownMenu' en este HTML.");
-            }
-        });
-    </script>
+    
 </body>
 
 </html>
