@@ -1,3 +1,4 @@
+/* De uso general */
 * {
     box-sizing: border-box;
 }
@@ -49,11 +50,53 @@ body {
 
     /* La clave del centrado vertical */
     min-height: 100vh;
+}
+
+.logo {
+    color: var(--text-principal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
-/* Cosas para que el boton de sol y luna se vea bien */
+.iconoinvertido {
+    width: 32px;
+    height: 32px;
+    filter: invert(1); /* Hace el SVG blanco */
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
 
+body.dark-mode .iconoinvertido {
+    filter: invert(15%) sepia(0%) saturate(1%) hue-rotate(154deg) brightness(96%) contrast(87%);
+}
+
+.nav-link-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 5px;
+}
+
+/* Elementos para hacer responsive a los botones de regresar */
+.nav-link-home .iconoinvertido {
+    transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
+}
+
+.nav-link-home:hover .iconoinvertido {
+    transform: scale(1.12);
+    filter: invert(1) drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6)); /* Resplandor blanco */
+}
+
+body.dark-mode .nav-link-home:hover .iconoinvertido {
+    transform: scale(1.12);
+    filter: invert(0) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3)); 
+}
+
+.nav-link-home:active .iconoinvertido {
+    transform: scale(0.95);
+}
+
+/* Cosas para que el boton de sol y luna se vea bien */
 .perfil-interactuable-menu .theme-switch-wrapper {
     display: flex;
     justify-content: center;
@@ -96,43 +139,19 @@ body {
     /* Efecto genial donde se agranda un poquito al tocarlo */
 }
 
-
-.logo {
-    color: var(--text-principal);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
-}
-
-.iconoinvertido {
-    width: 32px;
-    height: 32px;
-    filter: invert(1);
-}
-
-.nav-link-home {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    padding: 5px;
-}
-
-
-/* 1. Preparamos el terreno para que la animación sea suave al entrar y salir */
+/* Elementos para hacer responsive al boton de usuario */
 .perfil-avatar, 
 .usuario-iniciales {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor: pointer; /* Asegura que aparezca la mano de clic */
+    cursor: pointer; 
 }
 
-/* 2. Aplicamos el ligero agrandamiento y un sutil brillo al pasar el cursor */
 .perfil-avatar:hover, 
 .perfil-btn:hover .usuario-iniciales {
-    transform: scale(1.08); /* Se agranda un 8% de forma proporcional */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Le da profundidad al resaltar */
+    transform: scale(1.08); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); 
 }
 
-/* 3. Feedback extra: Cuando el usuario hace clic físico, se encoge un poco */
 .perfil-avatar:active,
 .perfil-btn:active .usuario-iniciales {
     transform: scale(0.96);
