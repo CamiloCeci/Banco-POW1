@@ -31,7 +31,7 @@ body.dark-mode {
 }
 
 body {
-    background-color: var(--bg-card);
+    background-color: var(--bg-body);
     background-image: url('');
     background-size: cover;
     background-position: center;
@@ -66,11 +66,7 @@ body {
 }
 
 body.dark-mode .iconoinvertido {
-    filter: invert(15%) sepia(50%) saturate(1%) hue-rotate(154deg) brightness(96%) contrast(87%);
-}
-
-body.dark-mode .ojito {
-    filter: invert(100%) hue-rotate(180deg);
+    filter: invert(15%) sepia(0%) saturate(1%) hue-rotate(154deg) brightness(96%) contrast(87%);
 }
 
 .nav-link-home {
@@ -155,26 +151,23 @@ body.banca-principal {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--bg-card);
-    /* Todo el fondo blanco unificado */
+    background-color: #ffffff;
     margin: 0;
     padding: 0 !important;
     /* Anula por completo el padding de 50px heredado */
-
+}
 
 #header-principal {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: var(--color_saldo);
-    /* Verde institucional */
-
+    background-color: #117d1a;
     width: 100%;
 }
 
 #header-principal .logo {
-    color:var(--text-principal);
+    color: #ffffff;
     font-size: 36px;
     font-weight: bold;
     margin: 0;
@@ -234,7 +227,7 @@ body.banca-principal {
 }
 
 .perfil-interactuable-menu .menu-option:hover {
-    background-color: var(--text-principal);
+    background-color: rgba(128, 128, 128, 0.1);
 }
 
 .menu-divider {
@@ -277,7 +270,7 @@ body.banca-principal {
 
 .caja-saldo {
     grid-column: span 2;
-    background-color: var(--color_saldo);
+    background-color: #117d1a;
     color: white;
     border-radius: 24px;
     padding: 45px 35px;
@@ -386,7 +379,7 @@ body.banca-principal {
 .Ultimas-trans p,
 .Ultimas-trans-barrasdivisoras p {
     margin: 5px 0 0 0;
-    color: var(--text-secundario);
+    color: #555555;
     font-size: 16px;
 }
 
@@ -394,7 +387,7 @@ body.banca-principal {
     display: block;
     font-size: 32px;
     font-weight: bold;
-    color: var(--text-principal);
+    color: #000000;
 }
 
 .Ultimas-trans-barrasdivisoras {
@@ -448,11 +441,11 @@ body.banca-principal {
 }
 
 .banca-footer {
-    background-color: var(--bg-card);
+    background-color: #ffffff;
     text-align: center;
     padding: 15px;
     font-size: 14px;
-    color: var(--text-principal);
+    color: #666;
     width: 100%;
     margin-top: 0;
     border-top: none;
@@ -1077,68 +1070,3 @@ input[type="email"]:focus {
     margin: 0;                 /* Resetea márgenes por defecto */
     padding-bottom: 5px;       /* Despega el subrayado de las letras */
 }
-
-/* ==========================================================================
-   Cosas de salir de la cuenta
-   ========================================================================== */
-/* Contenedor de fondo completo: Oscurece y quita color a la pantalla de atrás */
-.overlay-cerrar-sesion {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4); /* Capa oscura translúcida */
-    backdrop-filter: blur(2px);          /* Efecto opcional para difuminar levemente el fondo */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;                        /* Por encima de absolutamente todo */
-    
-    /* Oculto por defecto hasta que JS lo active */
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-/* Clase activa que encenderá JavaScript */
-.overlay-cerrar-sesion.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* La tarjeta oscura flotante del aviso */
-.aviso-exitoso {
-    background-color: #2c3545; /* El color azul oscuro/gris de la captura */
-    color: #ffffff;
-    padding: 25px 35px;
-    border-radius: 16px;       /* Bordes muy redondeados como en tu imagen */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    max-width: 300px;
-}
-
-/* El círculo del check blanco */
-.icono-check {
-    width: 50px;
-    height: 50px;
-    border: 3px solid #ffffff;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* El tamaño de la flecha interna */
-.icono-check svg {
-    width: 28px;
-    height: 28px;
-    color: #ffffff;
-}}

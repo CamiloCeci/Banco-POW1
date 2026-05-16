@@ -142,7 +142,7 @@ function filtrarHistorial(tipo) {
     transacciones.forEach(tarjeta => {
         if (tipo === 'todos') {
             // Si eligen 'todos', mostramos absolutamente todas las tarjetas
-            tarjeta.style.display = 'grid';
+            tarjeta.style.display = 'grid'; 
         } else if (tarjeta.classList.contains(tipo)) {
             // Si la tarjeta tiene la clase que buscamos ('ingreso' o 'egreso'), se muestra
             tarjeta.style.display = 'grid';
@@ -187,24 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 💡 Cuando crees nuevos menús en el futuro, solo agregas la llamada aquí abajo:
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');
-    }
-
-    // --- LÓGICA INTERACTIVA DE CERRAR SESIÓN ---
-    const linkCerrarSesion = document.getElementById('linkCerrarSesion');
-    const overlayCerrarSesion = document.getElementById('overlayCerrarSesion');
-
-    if (linkCerrarSesion && overlayCerrarSesion) {
-        linkCerrarSesion.addEventListener('click', (e) => {
-            e.preventDefault(); // Evita que la página suba o recargue al presionar '#'
-
-            // 1. Mostramos el aviso y oscurecemos el fondo aplicando la clase CSS
-            overlayCerrarSesion.classList.add('active');
-
-            // 2. Esperamos 2.5 segundos con el aviso en pantalla y luego cambiamos de ventana
-            setTimeout(() => {
-                window.location.href = 'iniciar_sesion.html';
-            }, 2500);
-        });
     }
 
     //Extra relacionado a pasar pantallas
