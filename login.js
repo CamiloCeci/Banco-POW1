@@ -92,4 +92,38 @@ if (formLogin) {
             }, 2000);
         });
     }
+    // --- 5. FUNCIÓN REUTILIZABLE PARA MENÚS DESPLEGABLES ---
+    function configurarDropdown(idBoton, idMenu) {
+        const boton = document.getElementById(idBoton);
+        const menu = document.getElementById(idMenu);
+
+        // Con este 'if' protegemos el código: si los elementos no existen en la página actual, no hace nada
+        if (boton && menu) {
+            boton.addEventListener('click', (e) => {
+                e.stopPropagation(); // Evita que el clic cierre el menú inmediatamente
+                menu.classList.toggle('show');
+            });
+
+            // Evento global: si hacen clic fuera del menú, este se cierra solo
+            document.addEventListener('click', (e) => {
+                // Verificamos si el clic fue fuera del botón y fuera del propio menú
+                if (!boton.contains(e.target) && !menu.contains(e.target)) {
+                    menu.classList.remove('show');
+                }
+            });
+        }
+    }
+
+    // --- INICIALIZACIÓN DE LOS MENÚS DE TU APP ---
+  
+    // Usamos DOMContentLoaded para asegurar que JavaScript espere a que cargue el HTML
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // 1. Activamos el menú de la tuerca en la página de transacciones
+        configurarDropdown('btnTuerca', 'dropdownMenu');
+
+        // 2. ¿Creaste otro menú en otra página del banco? Solo agregas una línea aquí abajo:
+        // configurarDropdown('btnNotificaciones', 'menuNotificaciones');
+        // configurarDropdown('btnPerfilUsuario', 'menuPerfil');
+    });
 }

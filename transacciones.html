@@ -14,7 +14,7 @@
         <header class="header-banco">
             <div class="header-left">
                 <a href="bienvenida.html" class="btn-home">🏠</a>
-                <h1>Banca 36🌎</h1>
+                <h1 class="logo">Banca 36🌎</h1>
             </div>
             <div class="theme-switch-wrapper">
                 <button id="theme-toggle" class="boton-tema">
@@ -30,7 +30,16 @@
 
             <div class="titulo-seccion-row">
                 <h2>Historial de transacciones</h2>
-                <button class="btn-tuerca">⚙️</button>
+
+                <div class="dropdown-container">
+                    <button class="btn-tuerca" id="btnTuerca">⚙️</button>
+
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <button onclick="alert('Filtrar por ingresos')">Ver Ingresos</button>
+                        <button onclick="alert('Filtrar por egresos')">Ver Egresos</button>
+                        <button onclick="location.href='bienvenida.html'">Volver al Inicio</button>
+                    </div>
+                </div>
             </div>
 
             <div class="contenedor-scroll-transacciones">
@@ -93,10 +102,31 @@
             </div>
         </main>
     </div>
-
-
-
     <script src="login.js"></script>
+
+    <script>
+        // Nos aseguramos de que el HTML esté completamente cargado en el navegador
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnTuerca = document.getElementById('btnTuerca');
+            const dropdownMenu = document.getElementById('dropdownMenu');
+
+            if (btnTuerca && dropdownMenu) {
+                // Evento al hacer clic en la tuerca
+                btnTuerca.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Evita que el clic se propague al 'document' y se cierre al instante
+                    dropdownMenu.classList.toggle('show');
+                    console.log("Menú de la tuerca presionado desde el script interno.");
+                });
+
+                // Si se hace clic en cualquier otra parte de la pantalla, el menú se cierra solo
+                document.addEventListener('click', () => {
+                    dropdownMenu.classList.remove('show');
+                });
+            } else {
+                console.error("Error crítico: No se encontró el ID 'btnTuerca' o 'dropdownMenu' en este HTML.");
+            }
+        });
+    </script>
 </body>
 
 </html>

@@ -52,6 +52,12 @@ body {
 
 }
 
+.logo{
+    color: var(--text-principal);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
 
 .Tarjeta {
     background-color: var(--bg-card);
@@ -568,4 +574,53 @@ input[type="email"]:focus {
     color: var(--text-secundario);
     font-size: 13px;
     align-self: center; /* Alinea al centro de la altura del monto */
+}
+
+/* ==========================================================================
+   Cosas del menu de la tuerca
+   ========================================================================== */
+
+   /* El contenedor padre debe ser relativo para que el menú se posicione respecto a él */
+.dropdown-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilo del menú oculto por defecto */
+.dropdown-menu {
+    display: none;             /* Oculto por defecto */
+    position: absolute;
+    top: 100%;                 /* Se despliega justo abajo del botón */
+    right: 0;                  /* Alíneado al borde derecho */
+    background-color: var(--bg-card);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    z-index: 1000;             /* Por encima de las transacciones */
+    min-width: 150px;
+}
+
+/* Estilo de los botones dentro del menú */
+.dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    background: none;
+    border: none;
+    color: var(--text-principal);
+    text-align: left;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+/* Efecto Hover para las opciones */
+.dropdown-menu button:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* CLASE ACTIVA: Esta es la que JS encenderá y apagará */
+.dropdown-menu.show {
+    display: block !important;
 }
