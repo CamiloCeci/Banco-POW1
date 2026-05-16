@@ -117,6 +117,27 @@ body {
     padding: 5px;
 }
 
+
+/* 1. Preparamos el terreno para que la animación sea suave al entrar y salir */
+.perfil-avatar, 
+.usuario-iniciales {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    cursor: pointer; /* Asegura que aparezca la mano de clic */
+}
+
+/* 2. Aplicamos el ligero agrandamiento y un sutil brillo al pasar el cursor */
+.perfil-avatar:hover, 
+.perfil-btn:hover .usuario-iniciales {
+    transform: scale(1.08); /* Se agranda un 8% de forma proporcional */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* Le da profundidad al resaltar */
+}
+
+/* 3. Feedback extra: Cuando el usuario hace clic físico, se encoge un poco */
+.perfil-avatar:active,
+.perfil-btn:active .usuario-iniciales {
+    transform: scale(0.96);
+}
+
 /* Empieza Pagina principal */
 body.banca-principal {
     display: flex;
@@ -400,12 +421,6 @@ body.banca-principal {
     background-color: #0e6615;
     color: #ffffff;
     /* Mantiene el texto blanco estable al pasar el mouse */
-}
-
-.principal-navegacion img {
-    width: 32px;
-    height: 32px;
-    filter: invert(1);
 }
 
 .banca-footer {
