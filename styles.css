@@ -107,8 +107,63 @@ body.banca-principal {
     border: 3px solid #ffffff; 
 }
 
+.perfil-interactuable {
+    position: relative;        /* <-- ¡Añade esto! */
+    display: inline-block;
+}
+
 .perfil-interactuable-menu {
-    display: none; 
+    display: none;             /* Oculto por defecto */
+    position: absolute;
+    top: 100%;                 /* Se despliega justo abajo del botón */
+    right: 0;                  /* Alineado a la derecha */
+    background-color: var(--bg-card);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px 0;
+    z-index: 1000;             /* Por encima de todo */
+    min-width: 150px;
+}
+
+/* Estilos de las opciones del menú (Enlaces limpios) */
+.perfil-interactuable-menu .menu-option {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    color: var(--text-principal);
+    text-decoration: none;
+    text-align: left;
+    font-size: 14px;
+    font-family: sans-serif;
+    transition: background 0.2s;
+}
+
+/* Hover responsivo para las opciones del menú */
+.perfil-interactuable-menu .menu-option:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+/* Divisor estético interno */
+.menu-divider {
+    border: none;
+    border-top: 1px solid rgba(128, 128, 128, 0.2);
+    margin: 6px 0;
+}
+
+/* Opción especial del Modo Oscuro con el switch */
+.perfil-interactuable-menu .modoosc-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: var(--text-principal);
+}
+
+/* CLASE ACTIVA: La que JS encenderá y apagará con el click */
+.perfil-interactuable-menu.show {
+    display: block !important;
 }
 
 /* Maximizamos el contenedor principal para aprovechar mejor pantallas grandes */

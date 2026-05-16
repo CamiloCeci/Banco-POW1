@@ -127,7 +127,6 @@ function configurarDropdown(idBoton, idMenu) {
     }
 }
 
-
 // ==========================================================================
 // --- CENTRALIZACIÓN Y LLAMADAS DE LAS FUNCIONES (Al final del archivo) ---
 // ==========================================================================
@@ -157,6 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Menú de opciones de la tuerca en la ventana de transacciones
         configurarDropdown('btnTuerca', 'dropdownMenu');
+
+        configurarDropdown('btnPerfil', 'menuPerfil');
         
         // 💡 Cuando crees nuevos menús en el futuro, solo agregas la llamada aquí abajo:
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');
