@@ -1,77 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
-    <title>Prueba</title>
+    <meta charset="UTF-8">
+    <title>Historial de Transacciones - Banca 36🌎</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 
-<body>
-    <header>
-        <div class="header-container">
-            <h1> Banca 36🌎</h1>
-            <div class="Casa">
-                <a href="index.html"><img src="casa.png" alt="Casa"></a>
+<body class="body-historial">
+
+    <div class="historial-wrapper">
+
+        <header class="header-banco">
+            <div class="header-left">
+                <a href="bienvenida.html" class="btn-home">🏠</a>
+                <h1>Banca 36🌎</h1>
             </div>
-            <div class="Perfil">
-                <a href="index.html"><img src="casa.png" alt="Casa"></a>
+            <div class="theme-switch-wrapper">
+                <button id="theme-toggle" class="boton-tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="perfil-avatar">AP</div>
+            </div>
+        </header>
+
+        <main class="contenido-historial">
+
+            <div class="titulo-seccion-row">
+                <h2>Historial de transacciones</h2>
+                <button class="btn-tuerca">⚙️</button>
             </div>
 
-        </div>
-    </header>
-    <div class="Principal">
-        <h2>Historial de Transacciones</h2> //esto debe de ser un flex
-        <div class="imagen_tuerca">
-            <img src="tuerca.png" alt="Tuerca"> //Esto debe de estar a la misma altura que el historial de transacciones
-            pero a la derecha
-        </div>
-        <div class="transaccion"> /*Aquí se deben de dividir en unos grids */
-            <p>Tranferencia</p> //esquina superior izq
-            <p>Fecha: 2023-10-01</p> //Al lado de transferencia
-            <p>Monto: $100.00</p> //Abajo de transferencia y mas grande
-            <p>Cuenta corriente **2398 - Transferencia a Pablo</p> //Al lado del monto y mas pequeño que el monto
-        </div>
+            <div class="contenedor-scroll-transacciones">
 
-        <div class="transaccion"> /*Aquí se deben de dividir en unos grids */
-            <p>Tranferencia</p> //esquina superior izq
-            <p>Fecha: 2023-10-01</p> //Al lado de transferencia
-            <p>Monto: $100.00</p> //Abajo de transferencia y mas grande
-            <p>Cuenta corriente **2398 - Transferencia a Pablo</p> //Al lado del monto y mas pequeño que el monto
-        </div>
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Transferencia</span>
+                    <span class="transaccion-fecha">30/04 10:00 am</span>
+                    <span class="transaccion-monto">Bs. 2.500</span>
+                    <span class="transaccion-detalle">Cta corriente 0012398 - Transferencia a Pablo</span>
+                </div>
 
-        <div class="transaccion"> /*Aquí se deben de dividir en unos grids */
-            <p>Tranferencia</p> //esquina superior izq
-            <p>Fecha: 2023-10-01</p> //Al lado de transferencia
-            <p>Monto: $100.00</p> //Abajo de transferencia y mas grande
-            <p>Cuenta corriente **2398 - Transferencia a Pablo</p> //Al lado del monto y mas pequeño que el monto
-        </div>
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Pago móvil</span>
+                    <span class="transaccion-fecha">29/04 8:24 pm</span>
+                    <span class="transaccion-monto">Bs. 844</span>
+                    <span class="transaccion-detalle">Banco Mercantil - 0416-2045498</span>
+                </div>
 
-        <div class="transaccion"> /*Aquí se deben de dividir en unos grids */
-            <p>Tranferencia</p> //esquina superior izq
-            <p>Fecha: 2023-10-01</p> //Al lado de transferencia
-            <p>Monto: $100.00</p> //Abajo de transferencia y mas grande
-            <p>Cuenta corriente **2398 - Transferencia a Pablo</p> //Al lado del monto y mas pequeño que el monto
-        </div>
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Depósito</span>
+                    <span class="transaccion-fecha">29/04 7:49 am</span>
+                    <span class="transaccion-monto">Bs. 7.800</span>
+                    <span class="transaccion-detalle">Cta corriente 0031859</span>
+                </div>
 
-        <div class="transaccion"> /*Aquí se deben de dividir en unos grids */
-            <p>Tranferencia</p> //esquina superior izq
-            <p>Fecha: 2023-10-01</p> //Al lado de transferencia
-            <p>Monto: $100.00</p> //Abajo de transferencia y mas grande
-            <p>Cuenta corriente **2398 - Transferencia a Pablo</p> //Al lado del monto y mas pequeño que el monto
-        </div>
-    </div>
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Pago móvil</span>
+                    <span class="transaccion-fecha">26/04 5:12 pm</span>
+                    <span class="transaccion-monto">Bs. 17.534</span>
+                    <span class="transaccion-detalle">Cta ahorro 0297889 - Traslado a la cuenta de mi hijo</span>
+                </div>
 
-    <div class="theme-switch-wrapper">
-        <button id="theme-toggle" class="boton-tema">
-            <span id="theme-icon">🌙</span>
-        </button>
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Depósito</span>
+                    <span class="transaccion-fecha">29/04 7:49 am</span>
+                    <span class="transaccion-monto">Bs. 7.800</span>
+                    <span class="transaccion-detalle">Cta corriente 0031859</span>
+                </div>
+
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Pago móvil</span>
+                    <span class="transaccion-fecha">26/04 5:12 pm</span>
+                    <span class="transaccion-monto">Bs. 17.534</span>
+                    <span class="transaccion-detalle">Cta ahorro 0297889 - Traslado a la cuenta de mi hijo</span>
+                </div>
+
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Transferencia</span>
+                    <span class="transaccion-fecha">30/04 10:00 am</span>
+                    <span class="transaccion-monto">Bs. 2.500</span>
+                    <span class="transaccion-detalle">Cta corriente 0012398 - Transferencia a Pablo</span>
+                </div>
+
+                <div class="transaccion">
+                    <span class="transaccion-tipo">Transferencia</span>
+                    <span class="transaccion-fecha">30/04 10:00 am</span>
+                    <span class="transaccion-monto">Bs. 2.500</span>
+                    <span class="transaccion-detalle">Cta corriente 0012398 - Transferencia a Luis</span>
+                </div>
+            </div>
+        </main>
     </div>
 
 
 
     <script src="login.js"></script>
-
 </body>
 
 </html>

@@ -391,3 +391,181 @@ input[type="email"]:focus {
 .loader-overlay.active {
     display: flex;
 }
+
+/* ==========================================================================
+   ESTILOS: INTERFAZ HISTORIAL DE TRANSACCIONES
+   ========================================================================== */
+
+.body-historial {
+    background-color: var(--bg-body);
+    transition: background-color 0.4s ease;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;    /* Ocupa todo el alto de la ventana */
+    width: 100vw;     /* Ocupa todo el ancho de la ventana */
+    overflow: hidden; /* Evita que la página entera tenga un doble scroll */
+}
+
+/* Caja principal de la vista */
+.historial-wrapper {
+    background-color: var(--bg-card);
+    color: var(--text-principal);
+    display: flex;
+    flex-direction: column;
+    
+    /* CAMBIOS NUEVOS: */
+    width: 100%;          /* Ocupa todo el ancho disponible */
+    height: 100%;         /* Ocupa todo el alto disponible */
+    max-width: none;      /* CAMBIO: Eliminamos el límite de 850px que tenía antes */
+    max-height: 100vh;
+    border-radius: 0;     /* CAMBIO: Quitamos las esquinas redondeadas para pantalla completa */
+    box-shadow: none;     /* Al no haber fondo detrás, ya no necesita sombra */
+}
+
+/* Cabecera superior verde */
+.header-banco {
+    background-color: var(--color_saldo);
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-banco h1 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.btn-home {
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.perfil-avatar {
+    background-color: #4a80f0;
+    color: white;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* Margen y respiro interno de la sección del historial */
+.contenido-historial {
+    padding: 25px;
+    display: flex;          /* NUEVO: Lo volvemos flexbox */
+    flex-direction: column; /* NUEVO: Elementos uno abajo del otro */
+    height: calc(100vh - 70px); /* NUEVO: Mide el alto total menos el espacio de la cabecera verde */
+    overflow: hidden;       /* NUEVO: Evita que este contenedor se rompa hacia abajo */
+}
+
+/* Fila del título secundaria */
+.titulo-seccion-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion-row h2 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: bold;
+    color: var(--text-principal);
+}
+
+.btn-tuerca {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-principal);
+    transition: transform 0.3s;
+}
+
+.btn-tuerca:hover {
+    transform: rotate(45deg);
+}
+
+/* Caja de desplazamiento (Scrollbar estilizado como el de tu captura) */
+.contenedor-scroll-transacciones {
+    flex: 1;             /* CAMBIO: Le dice a la lista que use TODO el alto sobrante de la pantalla */
+    overflow-y: auto;    /* Mantiene el scroll si la lista supera el tamaño de la pantalla */
+    padding-right: 8px;
+}
+
+/* Barra lateral de scroll personalizada */
+.contenedor-scroll-transacciones::-webkit-scrollbar {
+    width: 10px;
+}
+
+.contenedor-scroll-transacciones::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+    border-radius: 10px;
+}
+
+.contenedor-scroll-transacciones::-webkit-scrollbar-thumb {
+    background: #9d9d9d;
+    border-radius: 10px;
+    border: 2px solid var(--bg-card); /* Genera espacio simulado al rededor */
+}
+
+/* ESTRUCTURA GRID: Alineación exacta de cada transacción */
+.transaccion {
+    display: grid;
+    /* Columna 1 fija para el tipo/monto, Columna 2 expandible para fecha/detalles */
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto;
+    gap: 6px 15px;
+    padding: 18px 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+/* Posición exacta de los elementos en el tablero Grid */
+.transaccion-tipo {
+    grid-column: 1;
+    grid-row: 1;
+    font-weight: bold;
+    font-size: 14px;
+    color: var(--text-principal);
+}
+
+.transaccion-fecha {
+    grid-column: 2;
+    grid-row: 1;
+    color: var(--text-secundario);
+    font-size: 13px;
+}
+
+.transaccion-monto {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--text-principal);
+    letter-spacing: -1px;
+}
+
+.transaccion-detalle {
+    grid-column: 2;
+    grid-row: 2;
+    color: var(--text-secundario);
+    font-size: 13px;
+    align-self: center; /* Alinea al centro de la altura del monto */
+}
