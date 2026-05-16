@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Historial de Transacciones - Banca 36🌎</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="body-historial">
+
+    <div class="historial-wrapper">
+
+        <header class="header-banco">
+            <div class="header-left">
+                <a href="bienvenida.html" class="btn-home">🏠</a>
+                <h1 class="logo">Banca 36🌎</h1>
+            </div>
+
+            <div class="header-right">
+                <div class="perfil-interactuable">
+                    <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
+                    <button class="perfil-btn" id="btnPerfil">
+                        <div class="usuario-iniciales">
+                            AP
+                        </div>
+                    </button>
+
+                    <div class="perfil-interactuable-menu" id="menuPerfil">
+                        <a href="editar_perfil.html" class="menu-option">Editar perfil</a>
+                        <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                        <div class="theme-switch-wrapper">
+                            <button id="theme-toggle" class="boton-tema">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="contenido-historial">
+
+            <div class="titulo-seccion-row">
+                <h1 class = "especial">Detalle de Transaciones</h2>
+            </div>
+
+            <div class="contenedor-scroll-transacciones">
+
+                <div class="me_llaman_plex">
+                    
+
+                    <div>Tipo de transacción: Transferencia</div>
+                    <div>Monto: Bs. 2.500</div>
+                    <div>Fecha y hora: 30/04 10:00 am</div>
+                    <div>Cuenta destinatario: Cta corriente 00123498</div>
+                    <div>Nro referencia bancaria: 159-993-223-20</div>
+                    <div>Asunto: Transferencia para Pablo</div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>

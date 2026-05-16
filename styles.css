@@ -1000,3 +1000,31 @@ input[type="email"]:focus {
 .dropdown-menu.show {
     display: block !important;
 }
+.me_llaman_plex {
+    display: flex;
+    flex-direction: column;
+    
+    /* Tipografía y Textos */
+    font-family: 'Montserrat', 'Inter', sans-serif; /* Fuentes limpias idénticas a la imagen */
+    font-size: 50px;          /* Un tamaño 'large' más controlado y preciso */
+    font-weight: 700;          /* Negrita intensa (Bold) */
+    color: var(--text-principal);         /* Negro puro para máximo contraste */
+    line-height: 1.4;          /* Controla el espacio entre líneas del mismo texto */
+    gap: 18px;                 /* El espacio exacto de separación entre cada fila */
+
+    /* Estructura del Bloque de Fondo (Opcional, basado en el lienzo blanco de la foto) */
+    /* Fondo blanco inmaculado */
+    padding: 30px;             /* Margen interno para que el texto respire */
+    border-radius: 8px;        /* Esquinas suavizadas */
+    width: 100%;
+    box-sizing: border-box;    /* Evita que el padding rompa el ancho total */
+}
+
+/* Regla especial para el título principal: "Detalle de la transacción" */
+.especial {
+    font-size: 60px;           /* Más grande que el resto del contenido */
+    font-weight: 800;           /* Extra bold */
+    text-decoration: underline;/* El subrayado exacto que se ve en la captura */
+    margin: 0;                 /* Resetea márgenes por defecto */
+    padding-bottom: 5px;       /* Despega el subrayado de las letras */
+}
