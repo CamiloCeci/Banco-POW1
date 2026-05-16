@@ -1,45 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+    <head>
+        <title>Banca 360</title>
+    </head>
+    <body>
+        <header>
+            <!-- Logo del banco -->
+            <img src="assets/Banca_360-removebg-preview.png">
 
-<head>
-    <title>Prueba</title>
-    <link rel="stylesheet" href="styles.css">
+            <!-- Logica del perfil del usuario -->
+            <div class="perfil-interactuable">
+                <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
+                <button class="perfil-btn">
+                    <div class="usuario-iniciales">
+                        AP
+                    </div>
+                </button>
 
-</head>
-
-<body>
-        <div class="contenedor-saldo">
-            <h1>Saldo Actual - Cta. Ahorro ...945</h1>
-
-            <div class="contenedor-dinero">
-                <div class="saldo">Bs. 38.745,23</div>
-                <img src="https://cdn.icon-icons.com/icons2/788/PNG/512/eye_icon-icons.com_64930.png" class="icono-ojo" alt="Ver saldo">
+                <!-- Menu desplegable con sus opciones -->
+                <div class="perfil-interactuable-menu">
+                    <ul>
+                        <!-- Opcion editar perfil -->
+                        <li><a href="/editar perfil">Editar perfil</a></li>
+                        <!-- Opcion cerrar sesion -->
+                        <li><button class="cerrars-btn">Cerrar Sesión</button></li>
+                        <hr> <!-- Linea divisora -->
+                        <li class="modoosc-switch">
+                            <span>Modo Oscuro</span>
+                            <label class="switch">
+                                <input type="checkbox" id="modoosc">
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </header>
 
-            <div class="divisor">
-                <span>o continúa con</span>
-            </div>
-        </div>
-   
+        <main class="principal-contenido">
+            <!-- Contenedor con el saldo y numero de cuenta -->
+            <section class="tarjeta-banco">
+                <div class ="caja-saldo">
+                    <div class="tarjeta-textosup">
+                        <span>Saldo actual-Cta.Ahorro *935</span>
+                        <button class="cambiar-cuenta">
+                            <div>
+                                <span class="flecha">▲</span>
+                            </div>
+                    </div>
+                    <div class="tarjeta-textosaldo">
+                    <span>Bs. 38.745,23</span>
+                    </div>
+                </div>
 
-    <div class="theme-switch-wrapper">
-        <button id="theme-toggle" class="boton-tema">
-            <span id="theme-icon">🌙</span>
-        </button>
-    </div>
+                <!-- Boton del ojo -->
+                <button class="btn-ocultar-saldo" aria-label="Ocultar saldo">
+                    <img src="assets/eye-slash-svgrepo-com.svg">
+                </button>
 
+                <!-- Ultimas transacciones -->
+                <div class="Ultimas-trans">
+                    <span class="monto-principal">-2.500 Bs</span>
+                    <p>Transferencia para Pablo</p>
+                </div>
 
-    <div id="loader-container" class="loader-overlay">
-        <div class="loader-content">
-            <div class="spinner"></div>
-            <p>Cargando tu experiencia...</p>
-        </div>
-    </div>
-    <script src="login.js"></script>
+                <div class="Ultimas-trans-barrasdivisoras">
+                    <span class="monto-principal">-2.500 Bs</span>
+                    <p>Transferencia para Pablo</p>
+                </div>
 
-</body>
+                <div class="Ultimas-trans">
+                    <span class="monto-principal">+7.800 Bs</span>
+                    <p>Depósito desde Cta 0031859</p>
+                </div>
+            </section>
 
-
-
-
+            <!-- Opciones de navegacion -->
+            <nav class="principal-navegacion">
+                <ul>
+                    <li>
+                        <button>
+                            <img src="assets/contract-svgrepo-com.svg">
+                            <span class="subtitulo-principal">Historial transacciones</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <img src="assets/transfer-svgrepo-com.svg">
+                            <span class="subtitulo-principal">Transferencias</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button>
+                            <img src="assets/mobile-phone-of-rounded-corners-svgrepo-com.svg">
+                            <span class="subtitulo-principal">Pago móvil</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+        
+        <footer class="banca-footer">
+            <p>&copy; 2026 Banca 360. Todos los derechos reservados.</p>
+        </footer>
+    </body>
 </html>
