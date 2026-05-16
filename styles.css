@@ -52,10 +52,55 @@ body {
 
 }
 
-.logo{
+/* Cosas para que el boton de sol y luna se vea bien */
+
+.perfil-interactuable-menu .theme-switch-wrapper {
+    display: flex;
+    justify-content: center;
+    /* Centra el botón horizontalmente */
+    align-items: center;
+    padding: 10px 0 5px 0;
+    /* Espaciado arriba y abajo */
+    margin-top: 5px;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+    /* Una línea sutil divisoria */
+}
+
+/* 2. Quitamos el fondo blanco horrible y los bordes nativos del botón */
+.perfil-interactuable-menu .boton-tema {
+    background: transparent !important;
+    /* Forzamos a que sea transparente siempre */
+    border: none !important;
+    /* Eliminamos el borde gris de fábrica */
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    /* Si pasa el mouse, el destello será circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* 3. Ajustamos el tamaño del emoji (sol o luna) */
+.perfil-interactuable-menu #theme-icon {
+    font-size: 20px;
+    /* Tamaño ideal para que se vea nítido */
+    line-height: 1;
+}
+
+/* 4. Efecto hover: un sutil sombreado gris cuando pasas el mouse por encima */
+.perfil-interactuable-menu .boton-tema:hover {
+    background-color: rgba(128, 128, 128, 0.15) !important;
+    transform: scale(1.1);
+    /* Efecto genial donde se agranda un poquito al tocarlo */
+}
+
+
+.logo {
     color: var(--text-principal);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
+
 }
 
 /* Empieza Pagina principal */
@@ -65,9 +110,12 @@ body.banca-principal {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #ffffff; /* Todo el fondo blanco unificado */
-    margin: 0;                 /* Elimina los bordes del navegador */
-    padding: 0 !important;     /* Anula por completo el padding de 50px heredado */
+    background-color: #ffffff;
+    /* Todo el fondo blanco unificado */
+    margin: 0;
+    /* Elimina los bordes del navegador */
+    padding: 0 !important;
+    /* Anula por completo el padding de 50px heredado */
 }
 
 #header-principal {
@@ -75,15 +123,16 @@ body.banca-principal {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #117d1a; /* Verde institucional */
-    width: 100%;               
+    background-color: #117d1a;
+    /* Verde institucional */
+    width: 100%;
 }
 
 #header-principal .logo {
-    color: #ffffff;            
-    font-size: 36px;           
+    color: #ffffff;
+    font-size: 36px;
     font-weight: bold;
-    margin: 0;                 
+    margin: 0;
     font-family: sans-serif;
 }
 
@@ -104,25 +153,30 @@ body.banca-principal {
     justify-content: center;
     font-weight: bold;
     font-size: 16px;
-    border: 3px solid #ffffff; 
+    border: 3px solid #ffffff;
 }
 
 .perfil-interactuable {
-    position: relative;        /* <-- ¡Añade esto! */
+    position: relative;
+    /* <-- ¡Añade esto! */
     display: inline-block;
 }
 
 .perfil-interactuable-menu {
-    display: none;             /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: absolute;
-    top: 100%;                 /* Se despliega justo abajo del botón */
-    right: 0;                  /* Alineado a la derecha */
+    top: 100%;
+    /* Se despliega justo abajo del botón */
+    right: 0;
+    /* Alineado a la derecha */
     background-color: var(--bg-card);
     border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
-    z-index: 1000;             /* Por encima de todo */
+    z-index: 1000;
+    /* Por encima de todo */
     min-width: 150px;
 }
 
@@ -169,20 +223,25 @@ body.banca-principal {
 /* Maximizamos el contenedor principal para aprovechar mejor pantallas grandes */
 .principal-contenido {
     flex: 1;
-    max-width: 1300px;         /* Incrementado de 900px a 1300px para expandir la interfaz */
+    max-width: 1300px;
+    /* Incrementado de 900px a 1300px para expandir la interfaz */
     width: 100%;
-    margin: 0 auto;            /* Centrado horizontal perfecto */
-    padding: 60px 40px;        /* Mayor respiro interno para que los componentes luzcan imponentes */
+    margin: 0 auto;
+    /* Centrado horizontal perfecto */
+    padding: 60px 40px;
+    /* Mayor respiro interno para que los componentes luzcan imponentes */
     display: flex;
     flex-direction: column;
-    justify-content: center;   /* Centra los elementos verticalmente en el espacio muerto */
+    justify-content: center;
+    /* Centra los elementos verticalmente en el espacio muerto */
 }
 
 /* Ajuste de la matriz Grid para usar el nuevo ancho expandido */
 .tarjeta-banco {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;                 /* Aumentamos la separación entre cajas a 40px */
+    gap: 40px;
+    /* Aumentamos la separación entre cajas a 40px */
     align-items: center;
     width: 100%;
 }
@@ -191,8 +250,9 @@ body.banca-principal {
     grid-column: span 2;
     background-color: #117d1a;
     color: white;
-    border-radius: 24px; 
-    padding: 45px 35px;        /* Hacemos la caja de saldo más robusta y espaciosa */
+    border-radius: 24px;
+    padding: 45px 35px;
+    /* Hacemos la caja de saldo más robusta y espaciosa */
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
 }
 
@@ -200,7 +260,8 @@ body.banca-principal {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;           /* Texto un poco más legible */
+    font-size: 20px;
+    /* Texto un poco más legible */
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -214,18 +275,19 @@ body.banca-principal {
 }
 
 .cambiar-cuenta .flecha {
-    display: inline-block; 
-    transition: transform 0.2s ease; 
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
 .cambiar-cuenta:hover .flecha {
-    transform: translateY(-3px); 
+    transform: translateY(-3px);
 }
 
 .tarjeta-textosaldo {
-    font-size: 65px;           /* Saldo más grande y llamativo */
+    font-size: 65px;
+    /* Saldo más grande y llamativo */
     font-weight: bold;
-    color: white; 
+    color: white;
 }
 
 /* Botón del Ojo */
@@ -238,31 +300,35 @@ body.banca-principal {
 }
 
 .btn-ocultar-saldo img {
-    width: 130px;              /* Ajustamos el tamaño del ojo proporcionalmente al saldo */
+    width: 130px;
+    /* Ajustamos el tamaño del ojo proporcionalmente al saldo */
     height: auto;
     display: block;
-    transition: transform 0.2s ease-in-out; 
+    transition: transform 0.2s ease-in-out;
 }
 
 .btn-ocultar-saldo:hover img {
-    transform: scale(1.15); 
+    transform: scale(1.15);
 }
 
 /* Transacciones Inferiores */
-.Ultimas-trans, .Ultimas-trans-barrasdivisoras {
+.Ultimas-trans,
+.Ultimas-trans-barrasdivisoras {
     text-align: center;
     padding: 15px;
 }
 
-.Ultimas-trans p, .Ultimas-trans-barrasdivisoras p {
-    margin: 5px 0 0 0; 
+.Ultimas-trans p,
+.Ultimas-trans-barrasdivisoras p {
+    margin: 5px 0 0 0;
     color: #555555;
     font-size: 16px;
 }
 
 .monto-principal {
     display: block;
-    font-size: 32px;           /* Montos de transacciones acentuados */
+    font-size: 32px;
+    /* Montos de transacciones acentuados */
     font-weight: bold;
     color: #000000;
 }
@@ -275,16 +341,18 @@ body.banca-principal {
 /* Menú de Navegación inferior acoplado herméticamente */
 .principal-navegacion {
     width: 100%;
-    margin-top: auto;          /* Empuja la barra al extremo inferior */
-    background-color: #117d1a; /* Garantiza fondo verde continuo de borde a borde */
+    margin-top: auto;
+    /* Empuja la barra al extremo inferior */
+    background-color: #117d1a;
+    /* Garantiza fondo verde continuo de borde a borde */
 }
 
 .principal-navegacion ul {
     display: flex;
     list-style: none;
     width: 100%;
-    margin: 0;        
-    padding: 0;       
+    margin: 0;
+    padding: 0;
 }
 
 .principal-navegacion li {
@@ -296,28 +364,30 @@ body.banca-principal {
     width: 100%;
     background-color: #117d1a;
     color: #ffffff;
-    padding: 25px 20px;          
+    padding: 25px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     font-size: 15px;
     font-weight: bold;
-    text-decoration: none;     /* ¡Adiós al molesto subrayado azul del navegador! */
+    text-decoration: none;
+    /* ¡Adiós al molesto subrayado azul del navegador! */
     transition: background-color 0.2s, color 0.2s;
-    border-radius: 0;          
+    border-radius: 0;
     text-align: center;
 }
 
 /* Divisores internos sutiles entre los bloques del menú */
 .principal-navegacion li:not(:last-child) .nav-link {
-    border-right: 1px solid rgba(255, 255, 255, 0.15); 
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 /* Efecto hover sobre el enlace */
 .principal-navegacion .nav-link:hover {
     background-color: #0e6615;
-    color: #ffffff;            /* Mantiene el texto blanco estable al pasar el mouse */
+    color: #ffffff;
+    /* Mantiene el texto blanco estable al pasar el mouse */
 }
 
 .principal-navegacion img {
@@ -333,9 +403,12 @@ body.banca-principal {
     font-size: 14px;
     color: #666;
     width: 100%;
-    margin-top: 0;             /* Cero separación con la barra verde superior */
-    border-top: none;          /* Eliminamos cualquier línea o borde residual */
+    margin-top: 0;
+    /* Cero separación con la barra verde superior */
+    border-top: none;
+    /* Eliminamos cualquier línea o borde residual */
 }
+
 /* Termina Pagina principal */
 .Tarjeta {
     background-color: var(--bg-card);
@@ -397,7 +470,7 @@ p {
     font-size: 14px;
 }
 
-.saldo{
+.saldo {
     font-size: 50px;
     font-weight: bold;
     color: var(--text-principal);
@@ -406,21 +479,25 @@ p {
 /* Nuevo: Esto pone el saldo y el ojo en la misma línea */
 .contenedor-dinero {
     display: flex;
-    align-items: center;    /* Los centra verticalmente entre sí */
-    gap: 15px;              /* Espacio entre el texto y el ojo */
+    align-items: center;
+    /* Los centra verticalmente entre sí */
+    gap: 15px;
+    /* Espacio entre el texto y el ojo */
     margin-top: 20px;
 }
 
 /* Ajuste para el icono del ojo */
 .icono-ojo {
-    width: 40px;            /* Tamaño adecuado */
+    width: 40px;
+    /* Tamaño adecuado */
     height: auto;
     cursor: pointer;
     transition: transform 0.2s;
 }
 
 .icono-ojo:hover {
-    transform: scale(1.2);  /* Efecto al pasar el mouse */
+    transform: scale(1.2);
+    /* Efecto al pasar el mouse */
 }
 
 
@@ -690,9 +767,12 @@ input[type="email"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;    /* Ocupa todo el alto de la ventana */
-    width: 100vw;     /* Ocupa todo el ancho de la ventana */
-    overflow: hidden; /* Evita que la página entera tenga un doble scroll */
+    height: 100vh;
+    /* Ocupa todo el alto de la ventana */
+    width: 100vw;
+    /* Ocupa todo el ancho de la ventana */
+    overflow: hidden;
+    /* Evita que la página entera tenga un doble scroll */
 }
 
 /* Caja principal de la vista */
@@ -701,14 +781,19 @@ input[type="email"]:focus {
     color: var(--text-principal);
     display: flex;
     flex-direction: column;
-    
+
     /* CAMBIOS NUEVOS: */
-    width: 100%;          /* Ocupa todo el ancho disponible */
-    height: 100%;         /* Ocupa todo el alto disponible */
-    max-width: none;      /* CAMBIO: Eliminamos el límite de 850px que tenía antes */
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    height: 100%;
+    /* Ocupa todo el alto disponible */
+    max-width: none;
+    /* CAMBIO: Eliminamos el límite de 850px que tenía antes */
     max-height: 100vh;
-    border-radius: 0;     /* CAMBIO: Quitamos las esquinas redondeadas para pantalla completa */
-    box-shadow: none;     /* Al no haber fondo detrás, ya no necesita sombra */
+    border-radius: 0;
+    /* CAMBIO: Quitamos las esquinas redondeadas para pantalla completa */
+    box-shadow: none;
+    /* Al no haber fondo detrás, ya no necesita sombra */
 }
 
 /* Cabecera superior verde */
@@ -754,10 +839,14 @@ input[type="email"]:focus {
 /* Margen y respiro interno de la sección del historial */
 .contenido-historial {
     padding: 25px;
-    display: flex;          /* NUEVO: Lo volvemos flexbox */
-    flex-direction: column; /* NUEVO: Elementos uno abajo del otro */
-    height: calc(100vh - 70px); /* NUEVO: Mide el alto total menos el espacio de la cabecera verde */
-    overflow: hidden;       /* NUEVO: Evita que este contenedor se rompa hacia abajo */
+    display: flex;
+    /* NUEVO: Lo volvemos flexbox */
+    flex-direction: column;
+    /* NUEVO: Elementos uno abajo del otro */
+    height: calc(100vh - 70px);
+    /* NUEVO: Mide el alto total menos el espacio de la cabecera verde */
+    overflow: hidden;
+    /* NUEVO: Evita que este contenedor se rompa hacia abajo */
 }
 
 /* Fila del título secundaria */
@@ -790,8 +879,10 @@ input[type="email"]:focus {
 
 /* Caja de desplazamiento (Scrollbar estilizado como el de tu captura) */
 .contenedor-scroll-transacciones {
-    flex: 1;             /* CAMBIO: Le dice a la lista que use TODO el alto sobrante de la pantalla */
-    overflow-y: auto;    /* Mantiene el scroll si la lista supera el tamaño de la pantalla */
+    flex: 1;
+    /* CAMBIO: Le dice a la lista que use TODO el alto sobrante de la pantalla */
+    overflow-y: auto;
+    /* Mantiene el scroll si la lista supera el tamaño de la pantalla */
     padding-right: 8px;
 }
 
@@ -808,7 +899,8 @@ input[type="email"]:focus {
 .contenedor-scroll-transacciones::-webkit-scrollbar-thumb {
     background: #9d9d9d;
     border-radius: 10px;
-    border: 2px solid var(--bg-card); /* Genera espacio simulado al rededor */
+    border: 2px solid var(--bg-card);
+    /* Genera espacio simulado al rededor */
 }
 
 /* ESTRUCTURA GRID: Alineación exacta de cada transacción */
@@ -852,14 +944,15 @@ input[type="email"]:focus {
     grid-row: 2;
     color: var(--text-secundario);
     font-size: 13px;
-    align-self: center; /* Alinea al centro de la altura del monto */
+    align-self: center;
+    /* Alinea al centro de la altura del monto */
 }
 
 /* ==========================================================================
    Cosas del menu de la tuerca
    ========================================================================== */
 
-   /* El contenedor padre debe ser relativo para que el menú se posicione respecto a él */
+/* El contenedor padre debe ser relativo para que el menú se posicione respecto a él */
 .dropdown-container {
     position: relative;
     display: inline-block;
@@ -867,16 +960,20 @@ input[type="email"]:focus {
 
 /* Estilo del menú oculto por defecto */
 .dropdown-menu {
-    display: none;             /* Oculto por defecto */
+    display: none;
+    /* Oculto por defecto */
     position: absolute;
-    top: 100%;                 /* Se despliega justo abajo del botón */
-    right: 0;                  /* Alíneado al borde derecho */
+    top: 100%;
+    /* Se despliega justo abajo del botón */
+    right: 0;
+    /* Alíneado al borde derecho */
     background-color: var(--bg-card);
     border: 1px solid rgba(128, 128, 128, 0.2);
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     padding: 5px 0;
-    z-index: 1000;             /* Por encima de las transacciones */
+    z-index: 1000;
+    /* Por encima de las transacciones */
     min-width: 150px;
 }
 

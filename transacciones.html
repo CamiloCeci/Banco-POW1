@@ -14,16 +14,28 @@
         <header class="header-banco">
             <div class="header-left">
                 <a href="bienvenida.html" class="btn-home">🏠</a>
-                <button onclick="location.href='bienvenida.html'">Volver al Inicio</button> arregla esto
                 <h1 class="logo">Banca 36🌎</h1>
             </div>
-            <div class="theme-switch-wrapper">
-                <button id="theme-toggle" class="boton-tema">
-                    <span id="theme-icon">🌙</span>
-                </button>
-            </div>
+
             <div class="header-right">
-                <div class="perfil-avatar">AP</div>
+                <div class="perfil-interactuable">
+                    <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
+                    <button class="perfil-btn" id="btnPerfil">
+                        <div class="usuario-iniciales">
+                            AP
+                        </div>
+                    </button>
+
+                    <div class="perfil-interactuable-menu" id="menuPerfil">
+                        <a href="editar_perfil.html" class="menu-option">Editar perfil</a>
+                        <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                        <div class="theme-switch-wrapper">
+                            <button id="theme-toggle" class="boton-tema">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
 

@@ -1,107 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Principal-Banca 360</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body class="banca-principal">
-        <header id="header-principal">
-            <!-- Logo del banco -->
-            <h1 class="logo">Banca 36🌎</h1>
-            <!-- Logica del perfil del usuario -->
-            <div class="perfil-interactuable">
-                <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
-                 <button class="perfil-btn" id="btnPerfil">
-                    <div class="usuario-iniciales">
-                        AP
-                    </div>
-                </button>
-                
-                <div class="perfil-interactuable-menu" id="menuPerfil">
-                    <a href="editar_perfil.html" class="menu-option">Editar perfil</a>
-                    <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
-                    <hr class="menu-divider"> 
-                    <div class="modoosc-switch">
-                        <span>Modo Oscuro</span>
-                        <label class="switch">
-                            <input type="checkbox" id="modoosc">
-                            <span class="slider"></span>
-                        </label>
-                    </div>
+
+<head>
+    <title>Principal-Banca 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="banca-principal">
+    <header id="header-principal">
+        <!-- Logo del banco -->
+        <h1 class="logo">Banca 36🌎</h1>
+        <!-- Logica del perfil del usuario -->
+        <div class="perfil-interactuable">
+            <!-- El boton con las iniciales del usuario que tiene menu desplegable -->
+            <button class="perfil-btn" id="btnPerfil">
+                <div class="usuario-iniciales">
+                    AP
+                </div>
+            </button>
+
+            <div class="perfil-interactuable-menu" id="menuPerfil">
+                <a href="editar_perfil.html" class="menu-option">Editar perfil</a>
+                <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                <div class="theme-switch-wrapper">
+                    <button id="theme-toggle" class="boton-tema">
+                        <span id="theme-icon">🌙</span>
+                    </button>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
-        <main class="principal-contenido">
-            <!-- Contenedor con el saldo y numero de cuenta -->
-            <section class="tarjeta-banco">
-                <div class ="caja-saldo">
-                    <div class="tarjeta-textosup">
-                        <span>Saldo actual-Cta.Ahorro *935</span>
-                        <button class="cambiar-cuenta">
-                            <div>
-                                <span class="flecha">▲</span>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="tarjeta-textosaldo">
+    <main class="principal-contenido">
+        <!-- Contenedor con el saldo y numero de cuenta -->
+        <section class="tarjeta-banco">
+            <div class="caja-saldo">
+                <div class="tarjeta-textosup">
+                    <span>Saldo actual-Cta.Ahorro *935</span>
+                    <button class="cambiar-cuenta">
+                        <div>
+                            <span class="flecha">▲</span>
+                        </div>
+                    </button>
+                </div>
+                <div class="tarjeta-textosaldo">
                     <span>Bs. 38.745,23</span>
-                    </div>
                 </div>
+            </div>
 
-                <!-- Boton del ojo -->
-                <button class="btn-ocultar-saldo" aria-label="Ocultar saldo">
-                    <img src="assets/eye-slash-svgrepo-com.svg">
-                </button>
+            <!-- Boton del ojo -->
+            <button class="btn-ocultar-saldo" aria-label="Ocultar saldo">
+                <img src="assets/eye-slash-svgrepo-com.svg">
+            </button>
 
-                <!-- Ultimas transacciones -->
-                <div class="Ultimas-trans">
-                    <span class="monto-principal">-2.500 Bs</span>
-                    <p>Transferencia para Pablo</p>
-                </div>
+            <!-- Ultimas transacciones -->
+            <div class="Ultimas-trans">
+                <span class="monto-principal">-2.500 Bs</span>
+                <p>Transferencia para Pablo</p>
+            </div>
 
-                <div class="Ultimas-trans-barrasdivisoras">
-                    <span class="monto-principal">-2.500 Bs</span>
-                    <p>Transferencia para Pablo</p>
-                </div>
+            <div class="Ultimas-trans-barrasdivisoras">
+                <span class="monto-principal">-2.500 Bs</span>
+                <p>Transferencia para Pablo</p>
+            </div>
 
-                <div class="Ultimas-trans">
-                    <span class="monto-principal">+7.800 Bs</span>
-                    <p>Depósito desde Cta 0031859</p>
-                </div>
-            </section>
-        </main>
-        
-        <!-- Opciones de navegacion -->
-        <nav class="principal-navegacion">
-            <ul>
-                <li>
-                    <a href="transacciones.html" class="nav-link">
-                        <img src="assets/contract-svgrepo-com.svg" alt="Historial">
-                        <span class="subtitulo-principal">Historial transacciones</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="transferencias.html" class="nav-link">
-                        <img src="assets/transfer-svgrepo-com.svg" alt="Transferencias">
-                        <span class="subtitulo-principal">Transferencias</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="pagomovil.html" class="nav-link">
-                        <img src="assets/mobile-phone-of-rounded-corners-svgrepo-com.svg" alt="Pago Móvil">
-                        <span class="subtitulo-principal">Pago móvil</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+            <div class="Ultimas-trans">
+                <span class="monto-principal">+7.800 Bs</span>
+                <p>Depósito desde Cta 0031859</p>
+            </div>
+        </section>
+    </main>
 
-        <footer class="banca-footer">
-            <p>&copy; 2026 Banca 360. Todos los derechos reservados.</p>
-        </footer>
+    <!-- Opciones de navegacion -->
+    <nav class="principal-navegacion">
+        <ul>
+            <li>
+                <a href="transacciones.html" class="nav-link">
+                    <img src="assets/contract-svgrepo-com.svg" alt="Historial">
+                    <span class="subtitulo-principal">Historial transacciones</span>
+                </a>
+            </li>
+            <li>
+                <a href="transferencias.html" class="nav-link">
+                    <img src="assets/transfer-svgrepo-com.svg" alt="Transferencias">
+                    <span class="subtitulo-principal">Transferencias</span>
+                </a>
+            </li>
+            <li>
+                <a href="pagomovil.html" class="nav-link">
+                    <img src="assets/mobile-phone-of-rounded-corners-svgrepo-com.svg" alt="Pago Móvil">
+                    <span class="subtitulo-principal">Pago móvil</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
-        <script src="login.js"></script>
+    <footer class="banca-footer">
+        <p>&copy; 2026 Banca 360. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="login.js"></script>
 
 
-    </body>
+</body>
+
 </html>
