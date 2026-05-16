@@ -103,9 +103,21 @@ body {
 
 }
 
+.iconoinvertido {
+    width: 32px;
+    height: 32px;
+    filter: invert(1);
+}
+
+.nav-link-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 5px;
+}
+
 /* Empieza Pagina principal */
-
-
 body.banca-principal {
     display: flex;
     flex-direction: column;
