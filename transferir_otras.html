@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Transferir a otras cuentas - Banca 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body-historial">
+    <div class="historial-wrapper">
+        <header class="header-banco">
+            <div class="header-left">
+                <a href="transferencias.html" class="nav-link-home">
+                    <img class="iconoinvertido" src="assets/arrow-left-svgrepo-com.svg">
+                </a>
+                <h1 class="logo">Banca 36🌎</h1>
+            </div>
+            <div class="header-right">
+                <div class="perfil-interactuable">
+                    <button class="perfil-btn" id="btnPerfil">
+                        <div class="usuario-iniciales">AP</div>
+                    </button>
+                    <div class="perfil-interactuable-menu" id="menuPerfil">
+                        <a href="consultar_perfil.html" class="menu-option">Consultar perfil</a>
+                        <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                        <div class="theme-switch-wrapper">
+                            <button id="theme-toggle" class="boton-tema">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="contenido-transferencia">
+            <h1 class="titulo-transferencia">Transferir a otras cuentas</h1>
+
+            <div class="lista-beneficiarios">
+                <button class="btn-agregar-benef" onclick="alert('Agregar beneficiario (próximamente)');">
+                    <span style="font-size:22px;line-height:1;">＋</span> Agregar beneficiario
+                </button>
+
+                <a href="transferir_otras_form.html?b=maria" class="beneficiario-card">
+                    <div class="beneficiario-avatar">ML</div>
+                    <div class="beneficiario-info">
+                        <span class="beneficiario-nombre">María López</span>
+                        <span class="beneficiario-detalle">Banca 360 · Cta ahorro *766</span>
+                    </div>
+                </a>
+
+                <a href="transferir_otras_form.html?b=andres" class="beneficiario-card">
+                    <div class="beneficiario-avatar">AR</div>
+                    <div class="beneficiario-info">
+                        <span class="beneficiario-nombre">Andrés Ramírez</span>
+                        <span class="beneficiario-detalle">Banca 360 · Cta corriente *584</span>
+                    </div>
+                </a>
+
+                <a href="transferir_otras_form.html?b=perro" class="beneficiario-card">
+                    <div class="beneficiario-avatar">PC</div>
+                    <div class="beneficiario-info">
+                        <span class="beneficiario-nombre">Perrocalientes C.A.</span>
+                        <span class="beneficiario-detalle">Banca 360 · Cta corriente *339</span>
+                    </div>
+                </a>
+            </div>
+        </main>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>

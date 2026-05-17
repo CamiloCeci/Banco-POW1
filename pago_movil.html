@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pago móvil - Banca 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body-historial">
+    <div class="historial-wrapper">
+        <header class="header-banco">
+            <div class="header-left">
+                <a href="principal.html" class="nav-link-home">
+                    <img class="iconoinvertido" src="assets/arrow-left-svgrepo-com.svg">
+                </a>
+                <h1 class="logo">Banca 36🌎</h1>
+            </div>
+            <div class="header-right">
+                <div class="perfil-interactuable">
+                    <button class="perfil-btn" id="btnPerfil">
+                        <div class="usuario-iniciales">AP</div>
+                    </button>
+                    <div class="perfil-interactuable-menu" id="menuPerfil">
+                        <a href="consultar_perfil.html" class="menu-option">Consultar perfil</a>
+                        <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                        <div class="theme-switch-wrapper">
+                            <button id="theme-toggle" class="boton-tema">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="contenido-transferencia">
+            <h1 class="titulo-transferencia">Pago móvil</h1>
+
+            <form class="form-transferencia" id="formPagoMovil">
+                <div class="campo-form">
+                    <label for="monto">Enviar Bs.</label>
+                    <input type="number" id="monto" class="input-monto" placeholder="0,00" step="0.01" min="0.01" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="tel">Teléfono móvil</label>
+                    <input type="tel" id="tel" placeholder="Ingrese un número de teléfono" pattern="[0-9\- ]{7,20}" required>
+                </div>
+
+                <div class="campo-form">
+                    <label for="docnum">Documento de identidad</label>
+                    <div class="fila-doc">
+                        <select id="doctipo" required>
+                            <option>V</option>
+                            <option>E</option>
+                            <option>J</option>
+                            <option>G</option>
+                            <option>P</option>
+                        </select>
+                        <input type="text" id="docnum" placeholder="Número de documento" required>
+                    </div>
+                </div>
+
+                <div class="campo-form">
+                    <label for="banco">Banco destino</label>
+                    <select id="banco" required>
+                        <option value="" disabled selected>Seleccione el banco del destinatario</option>
+                        <option>Banco Mercantil</option>
+                        <option>Banesco</option>
+                        <option>Banco Nacional de Crédito (BNC)</option>
+                        <option>Banco de Venezuela</option>
+                        <option>Banco Provincial (BBVA)</option>
+                        <option>Banco Bicentenario</option>
+                        <option>Banco Plaza</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="desde">Desde mi cuenta</label>
+                    <select id="desde" required>
+                        <option value="ahorro935">Cta ahorro - *935 - Bs. 38.745,23</option>
+                        <option value="corriente456">Cta corriente - *456 - Bs. 12.300,00</option>
+                        <option value="corriente147">Cta corriente - *147 - Bs. 5.420,80</option>
+                    </select>
+                </div>
+
+                <div class="campo-form">
+                    <label for="asunto">Asunto</label>
+                    <input type="text" id="asunto" placeholder="(Opcional)" maxlength="80">
+                </div>
+
+                <button type="submit" class="btn-transferir">Realizar pago móvil</button>
+            </form>
+        </main>
+    </div>
+
+    <div id="loader-container" class="loader-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Procesando pago móvil...</p>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script>
+        document.getElementById('formPagoMovil')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            document.getElementById('loader-container').classList.add('active');
+            setTimeout(() => { window.location.href = 'pago_movil_exitoso.html'; }, 1500);
+        });
+    </script>
+</body>
+</html>

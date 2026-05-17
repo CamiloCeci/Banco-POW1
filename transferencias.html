@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Transferencias - Banca 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="body-historial">
+    <div class="historial-wrapper">
+        <header class="header-banco">
+            <div class="header-left">
+                <a href="principal.html" class="nav-link-home">
+                    <img class="iconoinvertido" src="assets/arrow-left-svgrepo-com.svg">
+                </a>
+                <h1 class="logo">Banca 36🌎</h1>
+            </div>
+            <div class="header-right">
+                <div class="perfil-interactuable">
+                    <button class="perfil-btn" id="btnPerfil">
+                        <div class="usuario-iniciales">AP</div>
+                    </button>
+                    <div class="perfil-interactuable-menu" id="menuPerfil">
+                        <a href="consultar_perfil.html" class="menu-option">Consultar perfil</a>
+                        <a href="iniciar_sesion.html" class="menu-option">Cerrar sesión</a>
+                        <div class="theme-switch-wrapper">
+                            <button id="theme-toggle" class="boton-tema">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="contenido-transferencia">
+            <h1 class="titulo-transferencia">Transferencias</h1>
+
+            <div class="menu-transferencias">
+                <a href="transferir_mis_cuentas.html" class="menu-card">
+                    <div class="menu-card-icono">⇄</div>
+                    <h3 class="menu-card-titulo">A mis cuentas</h3>
+                    <p class="menu-card-desc">Mueve dinero entre tus propias cuentas de Banca 360 al instante.</p>
+                </a>
+
+                <a href="transferir_otras.html" class="menu-card">
+                    <div class="menu-card-icono">👥</div>
+                    <h3 class="menu-card-titulo">A otras cuentas</h3>
+                    <p class="menu-card-desc">Transfiere a terceros dentro del mismo banco usando sus datos.</p>
+                </a>
+
+                <a href="transferir_otros_bancos.html" class="menu-card">
+                    <div class="menu-card-icono">🏦</div>
+                    <h3 class="menu-card-titulo">A otros bancos</h3>
+                    <p class="menu-card-desc">Envía dinero a cuentas de otros bancos nacionales.</p>
+                </a>
+
+                <a href="pago_movil.html" class="menu-card">
+                    <div class="menu-card-icono">📱</div>
+                    <h3 class="menu-card-titulo">Pago móvil</h3>
+                    <p class="menu-card-desc">Transfiere usando cédula y número telefónico del beneficiario.</p>
+                </a>
+            </div>
+        </main>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
