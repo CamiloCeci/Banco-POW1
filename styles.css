@@ -1244,7 +1244,7 @@ input[type="email"]:focus {
     background-color: #ffffff;
     border-radius: 24px;
     /* Bordes muy redondeados como el mockup */
-    padding: 40px 30px;
+    padding: 130px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2038,4 +2038,82 @@ input[type="email"]:focus {
     .input-monto { font-size: 30px !important; }
     .exito-monto { font-size: 34px; }
     .exito-acciones { flex-direction: column; }
+}
+
+/* Estilos de la pantalla de consultar perfil */
+body.banca-principal .header-banco {
+    flex-shrink: 0;
+    background-color: var(--color_saldo);
+}
+
+body.banca-principal .editarp-contenido {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+
+body.banca-principal .editarp-flex {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    width: 100%;
+}
+
+body.banca-principal .infouser {
+    flex: 1;
+    max-width: 320px;
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.banca-principal .panel-datos {
+    flex: 2;
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    padding: 30px 35px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+body.banca-principal .usuario-iniciales-grande {
+    width: 120px;
+    height: 120px;
+    background-color: #4a77e5;
+    font-size: 42px;
+    margin-bottom: 20px;
+}
+
+body.banca-principal .usuario-nombre-titulo {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: var(--text-principal);
+}
+
+body.banca-principal .ultima-visita {
+    font-size: 12px;
+    color: var(--text-secundario);
+}
+
+body.banca-principal .seccion-titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-principal);
+}
+
+body.banca-principal .grid-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
