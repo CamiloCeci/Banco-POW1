@@ -356,6 +356,22 @@ body.banca-principal {
     border: none;
     cursor: pointer;
     justify-self: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.btn-ocultar-saldo:hover {
+    transform: scale(1.1);
+}
+
+/* Animación de parpadeo al ocultar/mostrar */
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.saldo-animation {
+    animation: blink 0.3s ease;
 }
 
 .btn-ocultar-saldo img {
@@ -367,6 +383,19 @@ body.banca-principal {
 
 .btn-ocultar-saldo:hover img {
     transform: scale(1.15);
+}
+
+/* Estilos para poder ocultar el saldo */
+.saldo-oculto {
+    font-size: 65px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 8px;
+    /* Espaciado entre los puntos */
+}
+
+.tarjeta-textosaldo span {
+    transition: all 0.3s ease;
 }
 
 /* Transacciones Inferiores */

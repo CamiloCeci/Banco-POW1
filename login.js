@@ -189,6 +189,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');
     }
 
+    if (typeof iniciarOcultarSaldo === 'function') {
+        iniciarOcultarSaldo();
+    }
+
     //Extra relacionado a pasar pantallas
     if (typeof pasarPantallas === 'function') {
 
@@ -198,3 +202,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("¡Todas las funciones del Banco se han inicializado correctamente!");
 });
+
+function iniciarOcultarSaldo() {
+    const btnOcultar = document.getElementById('btnOcultarSaldo');
+    const saldoElement = document.querySelector('.tarjeta-textosaldo span');
+    const ojoIcon = document.getElementById('ojoIcon');
+    
+    // Si no existe el botón o el elemento del saldo, salimos (no estamos en principal.html)
+    if (!btnOcultar || !saldoElement) return;
+    
+    // Variable para guardar el estado (true = visible, false = oculto)
+    let saldoVisible = true;
+    
+    // Guardamos el saldo original para mostrarlo después
+    let saldoOriginal = saldoElement.textContent;
+    
+    // Función para ocultar el saldo
+    function ocultarSaldo() {
+        saldoOriginal = saldoElement.textContent;
+        saldoElement.textContent = '•••';
+        saldoElement.classList.add('saldo-oculto');
+        saldoVisible = false;
+        
+        // Cambiar la imagen al ojo cerrado
+        if (ojoIcon) {
+            ojoIcon.src = 'assets/eye-slash-svgrepo-com.svg';
+            // Si no tienes el icono de ojo cerrado, puedes usar este emoji como fallback
+            // o crear un SVG simple:
+            // ojoIcon.alt = 'Mostrar saldo';
+        }
+        
+        // Animación de parpadeo
+        saldoElement.classList.add('saldo-animation');
+        setTimeout(() => {
+            saldoElement.classList.remove('saldo-animation');
+        }, 300);
+    }
+    
+    // Función para mostrar el saldo
+    function mostrarSaldo() {
+        saldoElement.textContent = saldoOriginal;
+        saldoElement.classList.remove('saldo-oculto');
+        saldoVisible = true;
+        
+        // Cambiar la imagen al ojo abierto
+        if (ojoIcon) {
+            ojoIcon.src = 'assets/eye-svgrepo-com.svg';
+            // ojoIcon.alt = 'Ocultar saldo';
+        }
+        
+        // Animación de parpadeo
+        saldoElement.classList.add('saldo-animation');
+        setTimeout(() => {
+            saldoElement.classList.remove('saldo-animation');
+        }, 300);
+    }
+    
+    // Alternar entre mostrar y ocultar
+    btnOcultar.addEventListener('click', () => {
+        if (saldoVisible) {
+            ocultarSaldo();
+        } else {
+            mostrarSaldo();
+        }
+    });
+}
