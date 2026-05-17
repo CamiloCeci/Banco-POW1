@@ -503,10 +503,10 @@ body.dark-mode .ojojoto {
 .Tarjeta {
     background-color: var(--bg-card);
     color: var(--text-principal);
-    width: 300px;
+    width: 100%;
     margin: auto;
     padding: 25px;
-    border: 2px solid #ddd;
+    border: 2px solid var(--bg-card);
     border-radius: 15px;
     transition: 0.3s;
     flex: 1;
@@ -614,14 +614,92 @@ p {
 .main-container {
     display: flex;
     width: 100%;
+    min-width: 99vw;
+    height: calc(100vh - 110px);
     /* Para que no toque los bordes en pantallas pequeñas */
-    max-width: 1100px;
     margin: auto;
     background-color: var(--bg-card);
     border-radius: 15px;
     overflow: hidden;
     /* Para que la imagen respete las esquinas redondeadas */
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================================
+   --- CONTROLADOR PRINCIPAL KAIOKEN x10 ---
+   ========================================================================== */
+.super_main_container_kaiokenx10 {
+    /* 1. La combinación mágica para saltarse el padding del body */
+    position: fixed;   /* Se fija directamente a la ventana del navegador */
+    top: 0;
+    left: 0;
+    width: 100vw;      /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh;     /* Ocupa el 100% del alto de la ventana */
+    
+    /* 2. Mantenemos tu distribución en sándwich */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-body);
+    overflow: hidden;  /* Bloquea barras de scroll doble */
+    z-index: 100;      /* Asegura que nada se le ponga por encima */
+}
+
+/* Ajuste al contenedor del medio para que se adapte perfectamente */
+
+
+/* ==========================================================================
+   --- HEADER: GENKIDAMA ---
+   ========================================================================== */
+.genkidama {
+    height: 70px;
+    background-color:var(--color_saldo); /* Tu verde institucional bancario */
+    color: var(--text-principal);
+    display: flex;
+    justify-content: space-between; /* Envía el logo a la izquierda y enlaces a la derecha */
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 10; /* Asegura que flote visualmente sobre el video */
+}
+
+.genkidama .logo {
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--bg-card);
+}
+
+.genkidama .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: opacity 0.2s;
+}
+
+.genkidama .nav-links a:hover {
+    opacity: 0.8;
+}
+
+/* ==========================================================================
+   --- FOOTER: PUÑO DRAGÓN ---
+   ========================================================================== */
+.puno-dragon {
+    height: 40px;
+    background-color: var(--color_saldo); /* Un color oscuro neutral para cerrar la app */
+    color: var(--bg-card); /* Texto grisáceo sutil */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .imagen-decorativa {
