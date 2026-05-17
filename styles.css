@@ -1241,7 +1241,7 @@ input[type="email"]:focus {
 /* --- TARJETA DE USUARIO (IZQUIERDA) --- */
 .infouser {
     flex: 1;
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     border-radius: 24px;
     /* Bordes muy redondeados como el mockup */
     padding: 130px 30px;
@@ -1276,13 +1276,13 @@ input[type="email"]:focus {
 .usuario-nombre-titulo {
     font-size: 28px;
     font-weight: 800;
-    color: #000000;
+    color: var(--text-principal);
     margin: 0 0 15px 0;
 }
 
 .ultima-visita {
     font-size: 14px;
-    color: #666666;
+    color: var(--text-secundario);
     line-height: 1.5;
 }
 
@@ -1290,7 +1290,7 @@ input[type="email"]:focus {
 .panel-datos {
     flex: 2;
     /* Ocupa el doble de espacio que la tarjeta de usuario */
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     border-radius: 24px;
     padding: 40px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
@@ -1303,7 +1303,7 @@ input[type="email"]:focus {
 .seccion-titulo {
     font-size: 32px;
     font-weight: 800;
-    color: #000000;
+    color: var(--text-principal);
     margin: 0 0 25px 0;
 }
 
@@ -1320,14 +1320,14 @@ input[type="email"]:focus {
 .dato-bloque h2 {
     font-size: 18px;
     font-weight: 700;
-    color: #000000;
+    color: var(--text-principal);
     margin: 0 0 8px 0;
 }
 
 .dato-bloque span {
     font-size: 16px;
-    color: #555555;
-    background-color: #f8fafc;
+    color: var(--text-secundario);
+    background-color: var(--bg-card);
     /* Un fondo grisáceo sutil para resaltar el texto */
     padding: 8px 12px;
     border-radius: 6px;
