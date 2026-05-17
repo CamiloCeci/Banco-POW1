@@ -61,14 +61,16 @@ body {
 .iconoaclaro {
     width: 32px;
     height: 32px;
-    filter: invert(1); /* Hace el SVG blanco */
+    filter: invert(1);
+    /* Hace el SVG blanco */
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
 .iconoinvertido {
     width: 32px;
     height: 32px;
-    filter: invert(1); /* Hace el SVG blanco */
+    filter: invert(1);
+    /* Hace el SVG blanco */
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
@@ -91,12 +93,13 @@ body.dark-mode .iconoinvertido {
 
 .nav-link-home:hover .iconoinvertido {
     transform: scale(1.12);
-    filter: invert(1) drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6)); /* Resplandor blanco */
+    filter: invert(1) drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6));
+    /* Resplandor blanco */
 }
 
 body.dark-mode .nav-link-home:hover .iconoinvertido {
     transform: scale(1.12);
-    filter: invert(0) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3)); 
+    filter: invert(0) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
 }
 
 .nav-link-home:active .iconoinvertido {
@@ -136,16 +139,16 @@ body.dark-mode .nav-link-home:hover .iconoinvertido {
 }
 
 /* Elementos para hacer responsive al boton de usuario */
-.perfil-avatar, 
+.perfil-avatar,
 .usuario-iniciales {
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
-.perfil-avatar:hover, 
+.perfil-avatar:hover,
 .perfil-btn:hover .usuario-iniciales {
-    transform: scale(1.08); 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); 
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 .perfil-avatar:active,
@@ -158,7 +161,7 @@ body.banca-principal {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color:var(--bg-card);
+    background-color: var(--bg-card);
     margin: 0;
     padding: 0 !important;
     /* Anula por completo el padding de 50px heredado */
@@ -360,7 +363,8 @@ body.banca-principal {
 .ojojoto {
     width: 32px;
     height: 32px;
-    filter: invert(0); /* Hace el SVG blanco */
+    filter: invert(0);
+    /* Hace el SVG blanco */
     transition: transform 0.2s ease-in-out, filter 0.2s ease-in-out;
 }
 
@@ -383,9 +387,17 @@ body.dark-mode .ojojoto {
 
 /* Animación de parpadeo al ocultar/mostrar */
 @keyframes blink {
-    0% { opacity: 1; }
-    50% { opacity: 0.5; }
-    100% { opacity: 1; }
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 .saldo-animation {
@@ -498,6 +510,7 @@ body.dark-mode .ojojoto {
     margin-top: 0;
     border-top: none;
 }
+
 /* Termina Pagina principal */
 
 .Tarjeta {
@@ -630,18 +643,23 @@ p {
    ========================================================================== */
 .super_main_container_kaiokenx10 {
     /* 1. La combinación mágica para saltarse el padding del body */
-    position: fixed;   /* Se fija directamente a la ventana del navegador */
+    position: fixed;
+    /* Se fija directamente a la ventana del navegador */
     top: 0;
     left: 0;
-    width: 100vw;      /* Ocupa el 100% del ancho de la ventana */
-    height: 100vh;     /* Ocupa el 100% del alto de la ventana */
-    
+    width: 100vw;
+    /* Ocupa el 100% del ancho de la ventana */
+    height: 100vh;
+    /* Ocupa el 100% del alto de la ventana */
+
     /* 2. Mantenemos tu distribución en sándwich */
     display: flex;
     flex-direction: column;
     background-color: var(--bg-body);
-    overflow: hidden;  /* Bloquea barras de scroll doble */
-    z-index: 100;      /* Asegura que nada se le ponga por encima */
+    overflow: hidden;
+    /* Bloquea barras de scroll doble */
+    z-index: 100;
+    /* Asegura que nada se le ponga por encima */
 }
 
 /* Ajuste al contenedor del medio para que se adapte perfectamente */
@@ -652,16 +670,19 @@ p {
    ========================================================================== */
 .genkidama {
     height: 70px;
-    background-color:var(--color_saldo); /* Tu verde institucional bancario */
+    background-color: var(--color_saldo);
+    /* Tu verde institucional bancario */
     color: var(--text-principal);
     display: flex;
-    justify-content: space-between; /* Envía el logo a la izquierda y enlaces a la derecha */
+    justify-content: space-between;
+    /* Envía el logo a la izquierda y enlaces a la derecha */
     align-items: center;
     padding: 0 40px;
     box-sizing: border-box;
     font-family: 'Segoe UI', sans-serif;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 10; /* Asegura que flote visualmente sobre el video */
+    z-index: 10;
+    /* Asegura que flote visualmente sobre el video */
 }
 
 .genkidama .logo {
@@ -690,8 +711,10 @@ p {
    ========================================================================== */
 .puno-dragon {
     height: 40px;
-    background-color: var(--color_saldo); /* Un color oscuro neutral para cerrar la app */
-    color: var(--bg-card); /* Texto grisáceo sutil */
+    background-color: var(--color_saldo);
+    /* Un color oscuro neutral para cerrar la app */
+    color: var(--bg-card);
+    /* Texto grisáceo sutil */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1168,31 +1191,175 @@ input[type="email"]:focus {
 .dropdown-menu.show {
     display: block !important;
 }
+
 .me_llaman_plex {
     display: flex;
     flex-direction: column;
-    
+
     /* Tipografía y Textos */
-    font-family: 'Montserrat', 'Inter', sans-serif; /* Fuentes limpias idénticas a la imagen */
-    font-size: 50px;          /* Un tamaño 'large' más controlado y preciso */
-    font-weight: 700;          /* Negrita intensa (Bold) */
-    color: var(--text-principal);         /* Negro puro para máximo contraste */
-    line-height: 1.4;          /* Controla el espacio entre líneas del mismo texto */
-    gap: 18px;                 /* El espacio exacto de separación entre cada fila */
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    /* Fuentes limpias idénticas a la imagen */
+    font-size: 50px;
+    /* Un tamaño 'large' más controlado y preciso */
+    font-weight: 700;
+    /* Negrita intensa (Bold) */
+    color: var(--text-principal);
+    /* Negro puro para máximo contraste */
+    line-height: 1.4;
+    /* Controla el espacio entre líneas del mismo texto */
+    gap: 18px;
+    /* El espacio exacto de separación entre cada fila */
 
     /* Estructura del Bloque de Fondo (Opcional, basado en el lienzo blanco de la foto) */
     /* Fondo blanco inmaculado */
-    padding: 30px;             /* Margen interno para que el texto respire */
-    border-radius: 8px;        /* Esquinas suavizadas */
+    padding: 30px;
+    /* Margen interno para que el texto respire */
+    border-radius: 8px;
+    /* Esquinas suavizadas */
     width: 100%;
-    box-sizing: border-box;    /* Evita que el padding rompa el ancho total */
+    box-sizing: border-box;
+    /* Evita que el padding rompa el ancho total */
 }
 
 /* Regla especial para el título principal: "Detalle de la transacción" */
 .especial {
-    font-size: 60px;           /* Más grande que el resto del contenido */
-    font-weight: 800;           /* Extra bold */
-    text-decoration: underline;/* El subrayado exacto que se ve en la captura */
-    margin: 0;                 /* Resetea márgenes por defecto */
-    padding-bottom: 5px;       /* Despega el subrayado de las letras */
+    font-size: 60px;
+    /* Más grande que el resto del contenido */
+    font-weight: 800;
+    /* Extra bold */
+    text-decoration: underline;
+    /* El subrayado exacto que se ve en la captura */
+    margin: 0;
+    /* Resetea márgenes por defecto */
+    padding-bottom: 5px;
+    /* Despega el subrayado de las letras */
+}
+
+/* ==========================================================================
+   --- PANTALLA: EDITAR PERFIL (DISEÑO GRID & FLEX) ---
+   ========================================================================== */
+
+/* Contenedor general abajo del header */
+.editarp-contenido {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+}
+
+/* Flexbox: Divide la tarjeta izquierda del panel derecho */
+.editarp-flex {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+    /* Evita que la tarjeta de la izquierda se estire feo hacia abajo */
+}
+
+/* --- TARJETA DE USUARIO (IZQUIERDA) --- */
+.infouser {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 24px;
+    /* Bordes muy redondeados como el mockup */
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    /* Sombra suave para dar volumen */
+    max-width: 350px;
+}
+
+/* El círculo azul con las iniciales */
+.usuario-iniciales-grande {
+    width: 150px;
+    height: 150px;
+    background-color: #6897e8;
+    /* El color azul suave de la imagen */
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid #ffffff;
+    box-shadow: 0 0 0 4px #6897e8;
+    /* Doble borde genial como en la foto */
+    margin-bottom: 25px;
+}
+
+.usuario-nombre-titulo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000;
+    margin: 0 0 15px 0;
+}
+
+.ultima-visita {
+    font-size: 14px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* --- PANEL DE DETALLES (DERECHA) --- */
+.panel-datos {
+    flex: 2;
+    /* Ocupa el doble de espacio que la tarjeta de usuario */
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.seccion-perfil {
+    margin-bottom: 25px;
+}
+
+.seccion-titulo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #000000;
+    margin: 0 0 25px 0;
+}
+
+/* ¡La magia del Grid de 2 columnas! */
+.grid-datos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Divide el espacio en dos columnas exactamente iguales */
+    gap: 30px 20px;
+    /* 30px de espacio abajo, 20px de espacio a los lados */
+}
+
+/* Cada cajita de dato */
+.dato-bloque h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.dato-bloque span {
+    font-size: 16px;
+    color: #555555;
+    background-color: #f8fafc;
+    /* Un fondo grisáceo sutil para resaltar el texto */
+    padding: 8px 12px;
+    border-radius: 6px;
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Barra divisoria morada/azul suave */
+.divisor-perfil {
+    border: none;
+    height: 2px;
+    background-color: #b58eff;
+    /* Color de la línea de Canva */
+    margin: 35px 0;
 }
