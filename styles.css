@@ -151,7 +151,7 @@ body.banca-principal {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #ffffff;
+    background-color:var(--bg-card);
     margin: 0;
     padding: 0 !important;
     /* Anula por completo el padding de 50px heredado */
@@ -162,7 +162,7 @@ body.banca-principal {
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
-    background-color: #117d1a;
+    background-color: var(--color_saldo);
     width: 100%;
 }
 
@@ -270,7 +270,7 @@ body.banca-principal {
 
 .caja-saldo {
     grid-column: span 2;
-    background-color: #117d1a;
+    background-color: var(--color_saldo);
     color: white;
     border-radius: 24px;
     padding: 45px 35px;
@@ -408,7 +408,7 @@ body.banca-principal {
 .Ultimas-trans p,
 .Ultimas-trans-barrasdivisoras p {
     margin: 5px 0 0 0;
-    color: #555555;
+    color: var(--text-secundario);
     font-size: 16px;
 }
 
@@ -416,7 +416,7 @@ body.banca-principal {
     display: block;
     font-size: 32px;
     font-weight: bold;
-    color: #000000;
+    color: var(--text-principal);
 }
 
 .Ultimas-trans-barrasdivisoras {
@@ -445,7 +445,7 @@ body.banca-principal {
 
 .principal-navegacion .nav-link {
     width: 100%;
-    background-color: #117d1a;
+    background-color: var(--color_saldo);
     color: #ffffff;
     padding: 25px 20px;
     display: flex;
@@ -470,7 +470,7 @@ body.banca-principal {
 }
 
 .banca-footer {
-    background-color: #ffffff;
+    background-color: var(--bg-card);
     text-align: center;
     padding: 15px;
     font-size: 14px;
