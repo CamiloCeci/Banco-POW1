@@ -950,41 +950,22 @@ input[type="email"]:focus {
    ========================================================================== */
 
 .body-historial {
-    background-color: var(--bg-body);
-    transition: background-color 0.4s ease;
-    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* Ocupa todo el alto de la ventana */
-    width: 100vw;
-    /* Ocupa todo el ancho de la ventana */
     overflow: hidden;
-    /* Evita que la página entera tenga un doble scroll */
 }
 
 /* Caja principal de la vista */
 .historial-wrapper {
-    background-color: var(--bg-card);
-    color: var(--text-principal);
     display: flex;
     flex-direction: column;
-
-    /* CAMBIOS NUEVOS: */
+    height: 100vh;
     width: 100%;
-    /* Ocupa todo el ancho disponible */
-    height: 100%;
-    /* Ocupa todo el alto disponible */
-    max-width: none;
-    /* CAMBIO: Eliminamos el límite de 850px que tenía antes */
-    max-height: 100vh;
-    border-radius: 0;
-    /* CAMBIO: Quitamos las esquinas redondeadas para pantalla completa */
-    box-shadow: none;
-    /* Al no haber fondo detrás, ya no necesita sombra */
+    background-color: var(--bg-card);
+    overflow: hidden;
 }
 
 /* Cabecera superior verde */
@@ -1364,17 +1345,20 @@ input[type="email"]:focus {
     margin: 35px 0;
 }
  /****************************************************mi css David***************************************************************/
- .contenido-transferencia {
-    padding: 30px 40px;
+.contenido-transferencia {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
     overflow-y: auto;
+    background-color: transparent;
 }
 
 .titulo-transferencia {
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--text-principal);
-    margin: 0 0 30px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    flex-shrink: 0;
 }
 
 /* ---- Formulario de transferencia / pago móvil ---- */
@@ -1434,7 +1418,12 @@ input[type="email"]:focus {
     font-weight: 800 !important;
     text-align: center;
     color: var(--color_saldo) !important;
+    background-color: var(--input-bg) !important;
     padding: 18px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
 }
 
 /* Fila para documento de identidad (selector tipo + input) */
@@ -1692,12 +1681,12 @@ input[type="email"]:focus {
     gap: 8px;
 }
 
-.campo-form label {
+.campo-form label[for="monto"] {
     font-size: 15px;
     font-weight: 700;
     color: var(--text-principal);
-    text-transform: none;
-    letter-spacing: 0.2px;
+    margin-bottom: 5px;
+    display: block;
 }
 
 .campo-form input[type="text"],
@@ -1725,12 +1714,25 @@ input[type="email"]:focus {
 }
 
 /* Input grande del monto */
-.input-monto {
-    font-size: 38px !important;
-    font-weight: 800 !important;
-    text-align: center;
-    color: var(--color_saldo) !important;
-    padding: 18px !important;
+.input-monto:focus {
+    background-color: var(--bg-card) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: 0px 0px 8px rgba(48, 174, 92, 0.25) !important;
+    outline: none;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 640px) {
+    .contenido-transferencia {
+        padding: 20px;
+    }
+    .form-transferencia {
+        padding: 25px 20px;
+    }
+    .input-monto {
+        font-size: 30px !important;
+        padding: 14px !important;
+    }
 }
 
 /* Fila para documento de identidad (selector tipo + input) */
@@ -1967,18 +1969,24 @@ input[type="email"]:focus {
 
 /* ---- Menú de Transferencias (Página 14) ---- */
 .menu-transferencias {
-    max-width: 760px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
 }
 
 .menu-card {
+    flex: 1;
+    min-width: 240px;
+    max-width: 320px;
     background-color: var(--bg-card);
     border: 1px solid rgba(128, 128, 128, 0.18);
     border-radius: 18px;
-    padding: 28px 24px;
+    padding: 32px 24px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -1988,26 +1996,20 @@ input[type="email"]:focus {
     color: var(--text-principal);
     box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
     transition: all 0.25s ease;
-    min-height: 160px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .menu-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
     border-color: var(--color_saldo);
-    box-shadow: 0px 10px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 12px 28px rgba(0, 0, 0, 0.12);
 }
 
-.menu-card-icono {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background-color: rgba(48, 174, 92, 0.15);
-    color: var(--color_saldo);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    font-weight: 800;
+.menu-card .ojojoto {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    margin-bottom: 8px;
 }
 
 .menu-card-titulo {
@@ -2021,7 +2023,7 @@ input[type="email"]:focus {
     font-size: 13px;
     color: var(--text-secundario);
     margin: 0;
-    line-height: 1.45;
+    line-height: 1.5;
 }
 
 @media (max-width: 640px) {
