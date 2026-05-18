@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Preguntas de Seguridad - Banca 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="super_main_container_kaiokenx10">
+
+        <header class="genkidama">
+            <div class="logo">Banca 360🌎</div>
+            <nav class="nav-links">
+                <a href="#">Ayuda</a>
+                <a href="#">Contacto</a>
+            </nav>
+        </header>
+
+        <div class="main-container">
+            <div class="imagen-decorativa">
+                <video autoplay muted loop playsinline class="video-fondo">
+                    <source src="assets/video_tierra.mp4" type="video/mp4">
+                    Tu navegador no soporta videos.
+                </video>
+            </div>
+
+            <div class="Tarjeta">
+                <h1 class="titulo-seguridad">Verificación de seguridad</h1>
+                <p class="subtitulo-seguridad">Por favor, responde a las siguientes preguntas para validar tu identidad
+                    antes de ingresar a tu cuenta.</p>
+
+                <form id="formPreguntasSeguridad" action="principal.html">
+
+                    <div class="grupo-formulario">
+                        <label for="preguntaPerro" class="etiqueta-formulario">1. ¿Cuál es el nombre de tu perro o
+                            mascota?</label>
+                        <input type="text" id="preguntaPerro" placeholder="Escribe el nombre aquí" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="preguntaCiudad" class="etiqueta-formulario">2. ¿En qué ciudad naciste?</label>
+                        <input type="text" id="preguntaCiudad" placeholder="Escribe la ciudad aquí" required
+                            autocomplete="off">
+                    </div>
+
+                    <div class="grupo-formulario">
+                        <label for="preguntaVehiculo" class="etiqueta-formulario">3. ¿Cuál es la marca de tu primer
+                            vehículo?</label>
+                        <input type="text" id="preguntaVehiculo" placeholder="Escribe la marca aquí" required
+                            autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="boton boton-verificar" id="btn-verificar-seguridad">Verificar e ingresar</button>
+                </form>
+            </div>
+        </div>
+
+        <footer class="puno-dragon">
+            <p>&copy; 2026 Banca 360. Todos los derechos reservados. Prototipo Estético Avanzado.</p>
+        </footer>
+
+        <div id="loader-container" class="loader-overlay">
+            <div class="loader-content">
+                <div class="spinner"></div>
+                <p>Cargando tu experiencia...</p>
+            </div>
+        </div>
+
+    </div>
+    <script src="login.js"></script>
+</body>
+
+</html>

@@ -2160,3 +2160,65 @@ body.banca-principal .grid-datos {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+
+/* ==========================================================================
+   --- SECCIÓN ESPECÍFICA: PREGUNTAS DE SEGURIDAD ---
+   ========================================================================== */
+
+/* Ajustes de textos informativos en la tarjeta */
+.titulo-seguridad {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.subtitulo-seguridad {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Contenedor individual para separar cada combo de pregunta e input */
+.grupo-formulario {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    text-align: left; /* Alinea los labels hacia la izquierda */
+}
+
+/* Estilos premium para las preguntas (<label>) */
+.grupo-formulario .etiqueta-formulario {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+    margin-bottom: 8px;
+}
+
+/* Estilos de los inputs de texto adaptados a la estética de la app */
+.grupo-formulario input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 15px;
+    border: 1.5px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f9fbfd; /* Un fondo sutilmente grisáceo para que resalte */
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Efecto de iluminación azul cuando el usuario hace clic para escribir */
+.grupo-formulario input[type="text"]:focus {
+    outline: none;
+    border-color: #6897e8;
+    box-shadow: 0 0 0 3px rgba(104, 151, 232, 0.2);
+    background-color: #ffffff;
+}
+
+/* Espaciador superior para el botón final */
+.boton-verificar {
+    margin-top: 15px;
+    width: 100%;
+}

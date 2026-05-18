@@ -8,7 +8,7 @@
 
 <body>
     <div class="super_main_container_kaiokenx10">
-        
+
         <header class="genkidama">
             <div class="logo">Banca 360🌎</div>
             <nav class="nav-links">
@@ -16,9 +16,9 @@
                 <a href="#">Contacto</a>
             </nav>
             <div class="theme-switch-wrapper" style="opacity: 0; pointer-events: none; position: absolute;">
-                    <button id="theme-toggle" class="boton-tema">
-                        <span id="theme-icon">🌙</span>
-                    </button>
+                <button id="theme-toggle" class="boton-tema">
+                    <span id="theme-icon">🌙</span>
+                </button>
         </header>
 
         <div class="main-container">
@@ -32,19 +32,21 @@
             <div class="Tarjeta">
                 <h1>Crea tu perfil</h1>
 
-                <form id="miFormulario"> 
+                <form id="miFormulario" action="preguntas_seguridad.html" method="get">
                     <label for="email" class="etiqueta-formulario">Tu Email</label>
                     <input type="email" id="email" placeholder="EJ: tuemail@dominio.com" required>
                     <br>
-                   
+
                     <label for="password" class="etiqueta-formulario">Tu Contraseña</label>
-                    <input type="password" id="password" placeholder="Mínimo 5 caracteres" required>
+                    <input type="password" id="password" placeholder="Mínimo 6 caracteres" minlength="6" required>
                     <br>
+
                     <label for="confirmPassword" class="etiqueta-formulario">Confirmar Contraseña</label>
-                    <input type="password" id="confirmPassword" placeholder="Mínimo 5 caracteres" required>
+                    <input type="password" id="confirmPassword" placeholder="Mínimo 6 caracteres" minlength="6"
+                        required>
                     <br>
-                    <br>
-                    <button type="submit" class="boton">Seguir</button>
+                    
+                    <button type="submit" class="boton" id="btn-seguir">Seguir</button>
                 </form>
 
                 <div class="divisor">
@@ -57,7 +59,8 @@
                 </div>
 
                 <h4>¿Ya tienes una cuenta?
-                <a href="javascript:void(0)" class="button" id="link-iniciar-sesion">Iniciar Sesión</a></h4>
+                    <a href="iniciar_sesion.html" class="button">Iniciar Sesión</a>
+                </h4>
             </div>
         </div>
 
@@ -65,7 +68,8 @@
             <p>&copy; 2026 Banca 360. Todos los derechos reservados. Prototipo Estético Avanzado.</p>
         </footer>
 
-    </div> <div class="theme-switch-wrapper">
+    </div>
+    <div class="theme-switch-wrapper">
         <button id="theme-toggle" class="boton-tema">
             <span id="theme-icon">🌙</span>
         </button>
@@ -80,4 +84,5 @@
 
     <script src="login.js"></script>
 </body>
+
 </html>
