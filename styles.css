@@ -4,7 +4,7 @@
 }
 
 :root {
-    --bg-body: #cdcdcd;
+    --bg-body: #ffffff;
     /* Tu color actual [cite: 1] */
     --bg-card: #ffffff;
     /* Tu color actual  */
@@ -958,6 +958,40 @@ input[type="email"]:focus {
     overflow: hidden;
 }
 
+.body-historial .historial-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--bg-body);
+    overflow: hidden;
+}
+
+.body-historial .exito-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+    min-height: 0; /* Importante para que el flex se comporte bien */
+}
+
+.exito-card {
+    background-color: var(--bg-card);
+    border-radius: 24px;
+    padding: 30px 35px;
+    max-width: 620px;
+    width: 100%;
+    box-shadow: 0px 10px 35px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: auto;
+}
+
 /* Caja principal de la vista */
 .historial-wrapper {
     display: flex;
@@ -1653,6 +1687,15 @@ input[type="email"]:focus {
     padding: 30px 40px;
     flex: 1;
     overflow-y: auto;
+}
+
+#transferencia-centrador {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-principal);
+    margin: 0 0 95px 0;
+    text-align: center;
+    width: 100%;
 }
 
 .titulo-transferencia {

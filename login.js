@@ -42,8 +42,7 @@ function iniciarRegistro() {
 
             loader.classList.add('active'); // Activamos la animación de carga
             setTimeout(() => {
-                alert("¡Usuario registrado con éxito!");
-                window.location.href = "iniciar_sesion.html";
+                window.location.href = "principal.html";
             }, 2000);
         });
     }
@@ -78,7 +77,7 @@ function iniciarLogin() {
             if (esValidoFijo || esValidoRegistrado) {
                 loader.classList.add('active');
                 setTimeout(() => {
-                    window.location.href = "bienvenida.html"; // Redirige al Dashboard [cite: 86]
+                    window.location.href = "principal.html"; // Redirige al Dashboard [cite: 86]
                 }, 2000);
             } else {
                 alert("Usuario o contraseña incorrectos");
@@ -153,8 +152,133 @@ function filtrarHistorial(tipo) {
     });
 }
 
+function iniciarOcultarSaldo() {
+    const btnOcultar = document.getElementById('btnOcultarSaldo');
+    const saldoElement = document.querySelector('.tarjeta-textosaldo span');
+    const ojoIcon = document.getElementById('ojoIcon');
+    
+    // Si no existe el botón o el elemento del saldo, salimos (no estamos en principal.html)
+    if (!btnOcultar || !saldoElement) return;
+    
+    // Variable para guardar el estado (true = visible, false = oculto)
+    let saldoVisible = true;
+    
+    // Guardamos el saldo original para mostrarlo después
+    let saldoOriginal = saldoElement.textContent;
+    
+    // Función para ocultar el saldo
+    function ocultarSaldo() {
+        saldoOriginal = saldoElement.textContent;
+        // Guardar el saldo original en un atributo personalizado
+        saldoElement.setAttribute('data-saldo-original', saldoOriginal);
+        saldoElement.textContent = '•••';
+        saldoElement.classList.add('saldo-oculto');
+        saldoVisible = false;
+        
+        // Cambiar la imagen al ojo cerrado
+        if (ojoIcon) {
+            ojoIcon.src = 'assets/eye-slash-svgrepo-com.svg';
+        }
+        
+        // Animación de parpadeo
+        saldoElement.classList.add('saldo-animation');
+        setTimeout(() => {
+            saldoElement.classList.remove('saldo-animation');
+        }, 300);
+    }
+    
+    // Función para mostrar el saldo
+    function mostrarSaldo() {
+        // Recuperar el saldo original del atributo personalizado
+        const saldoGuardado = saldoElement.getAttribute('data-saldo-original');
+        if (saldoGuardado) {
+            saldoElement.textContent = saldoGuardado;
+        } else {
+            saldoElement.textContent = saldoOriginal;
+        }
+        saldoElement.classList.remove('saldo-oculto');
+        saldoVisible = true;
+        
+        // Cambiar la imagen al ojo abierto
+        if (ojoIcon) {
+            ojoIcon.src = 'assets/eye-svgrepo-com.svg';
+        }
+        
+        // Animación de parpadeo
+        saldoElement.classList.add('saldo-animation');
+        setTimeout(() => {
+            saldoElement.classList.remove('saldo-animation');
+        }, 300);
+    }
+    
+    // Alternar entre mostrar y ocultar
+    btnOcultar.addEventListener('click', () => {
+        if (saldoVisible) {
+            ocultarSaldo();
+        } else {
+            mostrarSaldo();
+        }
+    });
+}
+
+function iniciarCambioCuenta() {
+    const btnCuenta = document.getElementById('btnCuenta');
+    const menuCuenta = document.getElementById('menuCuenta');
+    const textoSuperior = document.querySelector('.tarjeta-textosup span:first-child');
+    const textoSaldo = document.querySelector('.tarjeta-textosaldo span');
+    
+    // Si no existe el botón o el menú, salimos (no estamos en principal.html)
+    if (!btnCuenta || !menuCuenta) return;
+    
+    // Obtener todos los elementos del menú (las opciones de cuenta)
+    const opcionesCuenta = menuCuenta.querySelectorAll('span');
+    
+    // Agregar evento click a cada opción del menú
+    opcionesCuenta.forEach(opcion => {
+        opcion.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            // Obtener los datos de la cuenta seleccionada
+            const nombreCuenta = opcion.textContent;
+            const nuevoSaldo = opcion.getAttribute('data-saldo');
+            
+            // Extraer solo el tipo de cuenta y los últimos dígitos
+            // Ejemplo: "Cta corriente-*456" -> "Cta corriente *456"
+            let textoActualizado = nombreCuenta.replace('-', ' ');
+            
+            // Actualizar el texto superior de la tarjeta
+            if (textoSuperior) {
+                textoSuperior.textContent = textoActualizado;
+            }
+            
+            // Actualizar el saldo
+            if (textoSaldo && nuevoSaldo) {
+                textoSaldo.textContent = `Bs. ${nuevoSaldo}`;
+                
+                // Si el saldo estaba oculto, mantenerlo oculto pero actualizar el valor original
+                if (textoSaldo.classList.contains('saldo-oculto')) {
+                    // Guardamos el nuevo saldo original para cuando se muestre
+                    textoSaldo.setAttribute('data-saldo-original', `Bs. ${nuevoSaldo}`);
+                }
+            }
+            
+            // Cerrar el menú después de seleccionar
+            menuCuenta.classList.remove('show');
+            
+            // Pequeña animación de feedback
+            const tarjeta = document.querySelector('.caja-saldo');
+            if (tarjeta) {
+                tarjeta.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    tarjeta.style.transform = 'scale(1)';
+                }, 150);
+            }
+        });
+    });
+}
+
 // ==========================================================================
-// --- CENTRALIZACIÓN Y LLAMADAS DE LAS FUNCIONES (Al final del archivo) ---
+// --- CENTRALIZACIÓN Y LLAMADAS DE LAS FUNCIONES ---
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -189,6 +313,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // configurarDropdown('idDelNuevoBoton', 'idDelNuevoMenu');
     }
 
+    if (typeof iniciarCambioCuenta === 'function') {
+        iniciarCambioCuenta();
+    }
+
     if (typeof iniciarOcultarSaldo === 'function') {
         iniciarOcultarSaldo();
     }
@@ -202,68 +330,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("¡Todas las funciones del Banco se han inicializado correctamente!");
 });
-
-function iniciarOcultarSaldo() {
-    const btnOcultar = document.getElementById('btnOcultarSaldo');
-    const saldoElement = document.querySelector('.tarjeta-textosaldo span');
-    const ojoIcon = document.getElementById('ojoIcon');
-    
-    // Si no existe el botón o el elemento del saldo, salimos (no estamos en principal.html)
-    if (!btnOcultar || !saldoElement) return;
-    
-    // Variable para guardar el estado (true = visible, false = oculto)
-    let saldoVisible = true;
-    
-    // Guardamos el saldo original para mostrarlo después
-    let saldoOriginal = saldoElement.textContent;
-    
-    // Función para ocultar el saldo
-    function ocultarSaldo() {
-        saldoOriginal = saldoElement.textContent;
-        saldoElement.textContent = '•••';
-        saldoElement.classList.add('saldo-oculto');
-        saldoVisible = false;
-        
-        // Cambiar la imagen al ojo cerrado
-        if (ojoIcon) {
-            ojoIcon.src = 'assets/eye-slash-svgrepo-com.svg';
-            // Si no tienes el icono de ojo cerrado, puedes usar este emoji como fallback
-            // o crear un SVG simple:
-            // ojoIcon.alt = 'Mostrar saldo';
-        }
-        
-        // Animación de parpadeo
-        saldoElement.classList.add('saldo-animation');
-        setTimeout(() => {
-            saldoElement.classList.remove('saldo-animation');
-        }, 300);
-    }
-    
-    // Función para mostrar el saldo
-    function mostrarSaldo() {
-        saldoElement.textContent = saldoOriginal;
-        saldoElement.classList.remove('saldo-oculto');
-        saldoVisible = true;
-        
-        // Cambiar la imagen al ojo abierto
-        if (ojoIcon) {
-            ojoIcon.src = 'assets/eye-svgrepo-com.svg';
-            // ojoIcon.alt = 'Ocultar saldo';
-        }
-        
-        // Animación de parpadeo
-        saldoElement.classList.add('saldo-animation');
-        setTimeout(() => {
-            saldoElement.classList.remove('saldo-animation');
-        }, 300);
-    }
-    
-    // Alternar entre mostrar y ocultar
-    btnOcultar.addEventListener('click', () => {
-        if (saldoVisible) {
-            ocultarSaldo();
-        } else {
-            mostrarSaldo();
-        }
-    });
-}
