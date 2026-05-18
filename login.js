@@ -268,6 +268,64 @@ function iniciarCambioCuenta() {
 }
 
 // ==========================================================================
+// --- EXTRA: CAMBIO DE CONTRASEÑA EN EL PERFIL ---
+// ==========================================================================
+function iniciarCambioClave() {
+    const formCambiarClave = document.getElementById('formCambiarClave');
+    if (!formCambiarClave) return;
+
+    const loader = document.getElementById('loader-container');
+
+    formCambiarClave.addEventListener('submit', (e) => {
+        e.preventDefault(); // Evita que la página se recargue bruscamente
+
+        const nuevaClaveInput = document.getElementById('nuevaClave');
+        const confirmarNuevaClaveInput = document.getElementById('confirmarNuevaClave');
+
+        // 1. Forzar validación nativa de HTML5 (minlength="6" y required)
+        if (!formCambiarClave.checkValidity()) {
+            formCambiarClave.reportValidity();
+            return;
+        }
+
+        // 2. Comprobar que ambas contraseñas coinciden de forma estricta
+        if (nuevaClaveInput.value !== confirmarNuevaClaveInput.value) {
+            alert("❌ Las contraseñas nuevas no coinciden. Por favor, verifícalas.");
+            confirmarNuevaClaveInput.focus();
+            return;
+        }
+
+        // 3. Simular la actualización del usuario activo en localStorage
+        // Nota: Como estamos en un prototipo, actualizaremos el último usuario registrado para pruebas
+        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+        
+        if (usuarios.length > 0) {
+            // Modificamos la contraseña del último usuario creado
+            usuarios[usuarios.length - 1].password = nuevaClaveInput.value;
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        } else {
+            // Si el usuario entró con las credenciales fijas ("juan" o "pepa"), creamos su registro modificado
+            usuarios.push({ email: "usuario_actual@banca360.com", password: nuevaClaveInput.value });
+            localStorage.setItem('usuarios', JSON.stringify(usuarios));
+        }
+
+        // 4. Mostrar animación estética de carga
+        if (loader) {
+            loader.classList.add('active');
+        }
+
+        // 5. Confirmación de éxito y limpieza del formulario
+        setTimeout(() => {
+            if (loader) {
+                loader.classList.remove('active');
+            }
+            alert("🔒 ¡Tu contraseña ha sido actualizada con éxito!");
+            formCambiarClave.reset(); // Limpia los campos del formulario
+        }, 2000);
+    });
+}
+
+// ==========================================================================
 // --- CENTRALIZACIÓN Y EJECUCIÓN (DOMContentLoaded) ---
 // ==========================================================================
 document.addEventListener('DOMContentLoaded', () => {
@@ -296,6 +354,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (typeof iniciarOcultarSaldo === 'function') {
         iniciarOcultarSaldo();
+    }
+
+    if (typeof iniciarOcultarSaldo === 'function') {
+        iniciarOcultarSaldo();
+    }
+
+    // 💡 NUEVA LLAMADA AGREGADA AQUÍ:
+    if (typeof iniciarCambioClave === 'function') {
+        iniciarCambioClave();
     }
 
     if (typeof pasarPantallas === 'function') {

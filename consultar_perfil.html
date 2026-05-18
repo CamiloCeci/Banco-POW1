@@ -59,16 +59,29 @@
                     <hr class="divisor-perfil">
 
                     <div class="seccion-perfil">
-                        <h1 class="seccion-titulo">Claves</h1>
+                        <h1 class="seccion-titulo">Claves y Seguridad</h1>
                         <div class="grid-datos">
+
                             <div class="dato-bloque">
-                                <h2>Clave de internet</h2>
-                                <span>00318923Tr</span>
+                                <h2>Clave de internet actual</h2>
+                                <span>123456</span>
                             </div>
+
                             <div class="dato-bloque">
-                                <h2>Clave de cajero</h2>
-                                <span>9546</span>
+                                <h2>Actualizar Clave de Internet</h2>
+                                <form id="formCambiarClave" class="formulario-perfil">
+                                    <input type="password" id="nuevaClave" class="input-perfil"
+                                        placeholder="Nueva clave (Mín. 6 caracteres)" minlength="6" required>
+
+                                    <input type="password" id="confirmarNuevaClave" class="input-perfil"
+                                        placeholder="Confirmar nueva clave" minlength="6" required>
+
+                                    <button type="submit" class="boton boton-guardar-clave">
+                                        Guardar Clave
+                                    </button>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

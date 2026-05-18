@@ -2222,3 +2222,44 @@ body.banca-principal .grid-datos {
     margin-top: 15px;
     width: 100%;
 }
+
+/* ==========================================================================
+   --- FORMULARIO DE ACTUALIZACIÓN DE CLAVE (PERFIL) ---
+   ========================================================================== */
+
+/* Contenedor del formulario */
+.formulario-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 280px;
+    margin-top: 8px;
+}
+
+/* Cajas de entrada de las contraseñas */
+.input-perfil {
+    padding: 8px 12px;
+    border: 1px solid var(--border-color, #ccc);
+    border-radius: 6px;
+    font-size: 14px;
+    background: transparent;
+    color: inherit;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto visual cuando el usuario hace clic para escribir */
+.input-perfil:focus {
+    border-color: #2e7d32; /* Un verde sutil bancario, cámbialo por tu color primario si gustas */
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.2);
+}
+
+/* Ajustes específicos para el botón dentro del bloque de datos */
+.boton-guardar-clave {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 4px;
+}
